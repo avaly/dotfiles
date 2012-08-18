@@ -2,4 +2,4 @@
 # Example inclusion by bash: start Terminal, ssh into a machine
 # Note: Must not echo anything!
 
-source ./.dotfiles/index.bash
+source ~/.dotfiles/index.bash

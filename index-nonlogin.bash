@@ -2,4 +2,4 @@
 # Example inclusion by bash: open new window in a login session
 #
 
-source ./.dotfiles/index.bash
+source ~/.dotfiles/index.bash
