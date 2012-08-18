@@ -1,0 +1,93 @@
+[user]
+	name = Valentin Agachi
+	email = github-com@agachi.name
+
+[core]
+	autocrlf = false
+	filemode = false
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	pager = less -R -S -X -x4 # 4-spaces tabs
+
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = auto
+
+[color "branch"]
+	current = white cyan bold
+	local = cyan
+	remote = yellow
+
+[color "diff"]
+	commit = yellow bold
+	plain = normal
+	meta = yellow
+	frag = magenta
+	old = red bold
+	new = green bold
+	whitespace = black red
+
+[color "status"]
+	header = normal
+	added = green
+	updated = yellow
+	changed = magenta
+	untracked = cyan
+
+[log]
+	date = iso
+
+[status]
+	submodulesummary = true
+
+[diff]
+	renames = copies		# Detect copies as well as renames.
+
+[alias]
+	s = status -s
+	st = status
+	a = add
+	ad = add
+	co = checkout
+	checout = checkout
+	nb = checkout -b		# create & switch to new branch
+	cm = commit -m
+	cma = commit -a -m
+	cmm = commit
+	cmma = commit -a
+	cp = cherry-pick
+	br = branch
+	su = submodule update
+	r = checkout --
+	rs = checkout --
+	reset = checkout --
+	undo = reset --soft HEAD^
+	ms = checkout master
+	sl = stash list
+	ss = stash save
+	sa = stash apply
+	sd = stash drop
+	amend = commit --amend
+	ammend = commit --amend
+	staged = diff --cached
+	both = diff HEAD
+	unstage = reset HEAD
+
+	sum = log --pretty=format:\"%h %Cblue%ai%Creset %Cgreen%an%Creset %s\"
+	wd = diff -w --color-words
+	wstaged = diff --staged -w --color-words
+
+	pl = !"git pull --ff-only --rebase origin; git su;"
+	work = !"git co dev;"
+	plm = !"git ms; git pl;"
+	rb = !"git plm; git work; git rebase master; git ls;"
+	mrg = !"git ms; git merge dev; git ls;"
+	pus = !"git push origin HEAD; git work;"
+
+	l = log -n 30 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ls = log -n 10 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgs = log -n 30 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lg = !"git l"
+
