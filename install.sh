@@ -24,4 +24,7 @@ ln -s -f ~/.dotfiles/.gitconfig ~/.gitconfig
 mkdir ~/bin 2> /dev/null
 cp -f ~/.dotfiles/bin/* ~/bin
 
+mkdir ~/.dotfiles.local 2> /dev/null
+cp -f ~/.dotfiles/local/* ~/.dotfiles.local
+
 echo "Done!"
