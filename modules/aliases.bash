@@ -11,8 +11,8 @@ alias gti='git'
 alias gut='git'
 alias got='git'
 
-alias ga='gitaliases.sh'
-alias gal='gitaliases.sh'
+alias ga='git-aliases.sh'
+alias gal='git-aliases.sh'
 
 alias h='history'
 
@@ -43,4 +43,3 @@ alias ips="/sbin/ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # repo
 alias dotfiles-pull='cd ~/.dotfiles && git fetch origin && git reset --hard origin/master'
-alias dotfiles-push='cd ~/.dotfiles && git commit -a --amend -C HEAD && git push -f'

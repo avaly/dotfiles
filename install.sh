@@ -21,4 +21,7 @@ echo "source ~/.dotfiles/index-nonlogin.bash" > ~/.bashrc
 
 ln -s -f ~/.dotfiles/.gitconfig ~/.gitconfig
 
+mkdir ~/bin 2> /dev/null
+cp -f ~/.dotfiles/bin/* ~/bin
+
 echo "Done!"
