@@ -10,8 +10,8 @@
 # Modules to include
 #
 MODULES=(
-	'setup.bash'
 	'aliases.bash'
+	'setup.bash'
 	'functions.bash'
 	'prompt.bash'
 )
