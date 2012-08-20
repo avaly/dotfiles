@@ -19,7 +19,7 @@ function parse_git_remote {
 
 
 function bash_prompt_color {
-    local PSTIME="${P_CLR_GREY}$(date +%H:%M)${P_CLR_NONE} "
+    local PSTIME="${P_CLR_GREY}\$(date +%H:%M)${P_CLR_NONE} "
     local PSUSER="${CLR_BLUE_L}\u${P_CLR_NONE}"
     local PSDIR="${P_CLR_GREEN}\w${P_CLR_NONE}"
     local PSGIT="\$(parse_git_branch \" on ${P_CLR_CYAN}\")\$(parse_git_dirty \"${P_CLR_RED}:\")\$(parse_git_dirty)${P_CLR_NONE}"
