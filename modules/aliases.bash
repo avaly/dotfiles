@@ -37,9 +37,15 @@ alias mv="mv -iv"
 # ignore case
 alias grep="grep -i --color=auto"
 
-alias service="sudo service"
+alias ips="ifconfig -a | grep -o 'inet addr:\(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet addr://'"
 
-alias ips="/sbin/ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+# services
+alias service='sudo service'
+
+alias nginx-re='service nginx restart'
+alias nginx-down='service nginx stop'
+
+alias memcache-re='service memcached restart'
 
 # repo
 alias dotfiles-pull='cd ~/.dotfiles && git fetch origin && git reset --hard origin/master'

@@ -36,6 +36,10 @@
 	changed = magenta
 	untracked = cyan
 
+[merge]
+	# Include summaries of merged commits in newly created merge commit messagesq
+	log = true
+
 [log]
 	date = iso
 
