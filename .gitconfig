@@ -64,7 +64,7 @@
 	cp = cherry-pick
 	br = branch
 	su = submodule update
-	psh = push origin HEAD
+	ps = push origin HEAD
 	r = checkout --
 	rs = checkout --
 	reset = checkout --
@@ -89,7 +89,7 @@
 	plm = !"git ms; git pl;"
 	rb = !"git plm; git work; git rebase master; git ls;"
 	mrg = !"git ms; git merge dev; git ls;"
-	ps = !"git push origin HEAD; git work;"
+	psh = !"git ms; git push origin HEAD; git work;"
 
 	l = log -n 30 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	ls = log -n 10 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
