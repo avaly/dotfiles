@@ -39,11 +39,13 @@ alias grep="grep -i --color=auto"
 
 alias ips="ifconfig -a | grep -o 'inet addr:\(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet addr://'"
 
+alias sa='ssh-add'
+
 # services
 alias service='sudo service'
 
 alias nginx-re='service nginx restart'
-alias nginx-down='service nginx stop'
+alias nginx-stop='service nginx stop'
 
 alias memcache-re='service memcached restart'
 
