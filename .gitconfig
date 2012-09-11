@@ -4,7 +4,7 @@
 
 [core]
 	autocrlf = false
-	filemode = false
+	filemode = true
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab
 	pager = less -R -S -X -x4 # 4-spaces tabs
 
@@ -76,6 +76,7 @@
 	sd = stash drop
 	amend = commit --amend
 	ammend = commit --amend
+	sta = diff --cached
 	staged = diff --cached
 	both = diff HEAD
 	unstage = reset HEAD
