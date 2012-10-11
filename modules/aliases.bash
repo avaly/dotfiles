@@ -14,6 +14,8 @@ alias got='git'
 alias ga='git-aliases.sh'
 alias gal='git-aliases.sh'
 
+alias gr='grunt'
+
 alias h='history'
 
 alias ..='cd ..'
