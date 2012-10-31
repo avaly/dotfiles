@@ -56,11 +56,12 @@
 	ad = add
 	co = checkout
 	checout = checkout
-	nb = checkout -b		# create & switch to new branch
+	nb = checkout -b
 	cm = commit -m
 	cma = commit -a -m
 	cmm = commit
 	cmma = commit -a
+	cms = commit --no-verify -m
 	cp = cherry-pick
 	br = branch
 	su = submodule update
