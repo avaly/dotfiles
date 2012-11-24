@@ -62,6 +62,7 @@
 	cmm = commit
 	cmma = commit -a
 	cms = commit --no-verify -m
+	cmsa = commit --no-verify -a -m
 	cp = cherry-pick
 	br = branch
 	su = submodule update
@@ -77,12 +78,13 @@
 	sd = stash drop
 	amend = commit --amend
 	ammend = commit --amend
+	d = diff
+	df = diff
 	sta = diff --cached
 	staged = diff --cached
 	both = diff HEAD
 	unstage = reset HEAD
 
-	sum = log --pretty=format:\"%h %Cblue%ai%Creset %Cgreen%an%Creset %s\"
 	wd = diff -w --color-words
 	wstaged = diff --staged -w --color-words
 
