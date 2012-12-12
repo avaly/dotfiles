@@ -72,6 +72,7 @@
 	reset = checkout --
 	undo = reset --soft HEAD^
 	ms = checkout master
+	prod = checkout production
 	sl = stash list
 	ss = stash save
 	sa = stash apply
