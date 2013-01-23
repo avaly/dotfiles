@@ -10,38 +10,40 @@ alias gi='git'
 alias gti='git'
 alias gut='git'
 alias got='git'
+alias fur='git'
+alias hoy='git'
 
 alias ga='git-aliases.sh'
 alias gal='git-aliases.sh'
 
 alias gr='grunt'
 
-alias h='history'
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 alias ~='cd ~'
 
-alias ls='ls -hF --color'
+alias ls='ls -hF'
 alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -CF'
 
 alias m='more'
 
-# interactive, verbose
-alias cp="cp -iv"
-alias rm="rm -i"
-alias mv="mv -iv"
+alias cp="cp -v"
+alias rm="rm -Iv"
+alias mv="mv -v"
 
-# ignore case
 alias grep="grep -i --color=auto"
 
+# utils
 alias ips="ifconfig -a | grep -o 'inet addr:\(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet addr://'"
-
-alias sa='ssh-add'
+alias sa="ssh-add"
+alias big="du -ks * | sort -n"
+alias listeners="lsof -i -P | grep LISTEN"
+alias cmds="cut -f1 -d' ' ~/.bash_history | sort | uniq -c | sort -nr | head -n 30"
 
 # services
 alias service='sudo service'

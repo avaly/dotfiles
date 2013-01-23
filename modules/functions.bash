@@ -42,6 +42,11 @@ ff()
 	find . -name ${1} -print
 }
 
+t()
+{
+    tail -f $1 | perl -pe "s/$2/${CLR_PURPLE_L}$&${CLR_NONE}/g"
+}
+
 # Handy extract function
 extract()
 {
