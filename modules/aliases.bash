@@ -1,9 +1,3 @@
-# Init global settings for certain bin
-if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
-	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto'
-fi
-
 # git
 alias g='git'
 alias gi='git'
@@ -18,6 +12,7 @@ alias gal='git-aliases.sh'
 
 alias gr='grunt'
 
+# fs
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -25,10 +20,10 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias ~='cd ~'
 
-alias ls='ls -hF'
-alias ll='ls -la'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='ls -hF --color=auto'
+alias ll='ls -la --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
 
 alias m='more'
 
