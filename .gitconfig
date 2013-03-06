@@ -79,15 +79,15 @@
 	sd = stash drop
 	amend = commit --amend
 	ammend = commit --amend
-	d = diff
+	fl = log -u
+	d = diff --color-words
 	df = diff
-	sta = diff --cached
+	sta = diff --cached --color-words
 	staged = diff --cached
+	dl = diff HEAD^
 	both = diff HEAD
+	unsta = reset HEAD
 	unstage = reset HEAD
-
-	wd = diff -w --color-words
-	wstaged = diff --staged -w --color-words
 
 	pl = !"git pull --ff-only --rebase origin; git su;"
 	work = !"git co dev;"
