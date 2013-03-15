@@ -2,7 +2,7 @@
 # git functions required in PS1
 #
 function parse_git_dirty {
-    echo -n $(git status 2>/dev/null | awk -v out=$1 -v std="dirty" '{ if ($0=="# Changes to be committed:") std = "uncommited"; last=$0 } END{ if(last!="" && last!="nothing to commit (working directory clean)") { if(out!="") print out; else print std } }')
+    echo -n $(git status 2>/dev/null | awk -v out=$1 -v std="dirty" '{ if ($0=="# Changes to be committed:") std = "uncommited"; last=$0 } END{ if(last!="" && last!="nothing to commit (working directory clean)" && last!="nothing to commit, working directory clean") { if(out!="") print out; else print std } }')
 }
 
 function parse_git_branch {
