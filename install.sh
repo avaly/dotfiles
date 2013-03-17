@@ -4,7 +4,7 @@
 
 # Check if .dotfiles are already installed
 
-COUNT=$(grep -c 'dotfiles' ~/bash_profile 2> /dev/null)
+COUNT=$(grep -c 'dotfiles' ~/.bash_profile 2> /dev/null)
 
 if [[ ! -z $COUNT ]] && [[ $COUNT -gt 0 ]]; then
 	echo ".dotfiles are already installed!"
