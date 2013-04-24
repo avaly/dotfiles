@@ -102,6 +102,7 @@ _prompt_git_status()
 
 function custom_prompt {
     local PSTIME="${CLR_GREY}[\$(date +%H:%M:%S)]${CLR_NONE} "
+    local PSHOST="${CLR_PURPLE}\h${CLR_NONE}" 
     local PSUSER="${CLR_BLUE_L}\u${CLR_NONE}"
     local PSDIR="${CLR_GREEN}\w${CLR_NONE}"
     local PSGIT="\$(_prompt_git_status)"
