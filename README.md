@@ -2,7 +2,10 @@
 
 Must be cloned in `~/.dotfiles`
 
-Local changes can be made in `~/.dotfiles.local`
+Install with: `~/.dotfiles/install.sh`
+
+Local overrides can be made in `~/.dotfiles.local`
 
 Credits:
-* [Krinkle's dotfiles](https://github.com/Krinkle/dotfiles)
+* [Krinkle dotfiles](https://github.com/Krinkle/dotfiles)
+* [Mathias Bynens dotfiles](https://github.com/mathiasbynens/dotfiles)

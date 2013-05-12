@@ -1,10 +1,7 @@
-# Adds an alias to the current shell and to the ~/.bash_aliases file
-add-alias ()
+# Create a new directory and enter it
+mkd()
 {
-	local name=$1 value="$2"
-	echo alias $name=\'$value\' >> ~/.bash_aliases
-	eval alias $name=\'$value\'
-	alias $name
+    mkdir -p $1 && cd $1
 }
 
 install()
@@ -34,12 +31,12 @@ pskill()
 
 files()
 {
-	find ${1} -type f -print
+	find $1 -type f -print
 }
 
 ff()
 {
-	find . -name ${1} -print
+	find . -name $1 -print
 }
 
 t()
@@ -68,4 +65,10 @@ extract()
      else
          echo "'$1' is not a valid file"
      fi
+}
+
+# Full dig info
+digg()
+{
+    dig +nocmd $1 any +multiline +noall +answer
 }

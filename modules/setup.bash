@@ -3,27 +3,32 @@
 #
 
 # don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+export HISTCONTROL="ignoredups:ignorespace"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+
+# Make some commands not show up in history
+export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g st:g ls:g d:g a .:g sta:exit:date:* --help"
 
 
 
 #
 # Editor
 #
-export EDITOR=vim
+export EDITOR="vim"
 
 #
 # Terminal
 #
-export PATH=$HOME/bin:$PATH
+export PATH="$HOME/bin:$PATH"
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
@@ -32,10 +37,20 @@ shopt -s cdspell
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+shopt -s autocd 2> /dev/null
+# * Recursive globbing, e.g. `echo **/*.txt`
+shopt -s globstar 2> /dev/null
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+
+# Use custom less colors for man pages
+# (http://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_1.html)
+export LESS_TERMCAP_md=$'\E[1;32m' # begin bold mode
+export LESS_TERMCAP_me=$'\E[0m' # end bold mode
+
+
+# enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 	. /etc/bash_completion
 fi
