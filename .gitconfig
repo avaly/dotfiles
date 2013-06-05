@@ -62,7 +62,7 @@
 	st = status
 	a = add
 	ad = add
-	ap = a -p
+	ap = add -p
 	co = checkout
 	checout = checkout
 	nb = checkout -b
