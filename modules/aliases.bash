@@ -57,7 +57,9 @@ alias nginx-stop="service nginx stop"
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
 alias apts="sudo apt-cache search"
-alias aptu="sudo apt-cache update && sudo apt-get upgrade"
+alias aptsh="sudo aptitude show"
+alias aptup="sudo apt-get update"
+alias aptug="sduo apt-get upgrade"
 
 # repo
 alias dotfiles-pull="cd ~/.dotfiles && git fetch origin && git reset --hard origin/master"
