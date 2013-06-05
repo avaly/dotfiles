@@ -61,5 +61,8 @@ alias aptsh="sudo aptitude show"
 alias aptup="sudo apt-get update"
 alias aptug="sduo apt-get upgrade"
 
+# ubuntu
+alias update-fonts="sudo fc-cache -f -v"
+
 # repo
 alias dotfiles-pull="cd ~/.dotfiles && git fetch origin && git reset --hard origin/master"
