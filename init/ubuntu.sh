@@ -178,6 +178,7 @@ init_software() {
     install_pkg "virtualbox"
     install_pkg "filezilla"
     install_pkg "nautilus-dropbox" "dropbox"
+    install_pkg "krusader"
 
     install_pkg "banshee"
     install_pkg "vlc"
@@ -230,6 +231,7 @@ init_ui() {
         'unity://running-apps',
         'application://sublime.desktop',
         'application://filezilla.desktop',
+        'application://kde4-krusader.desktop',
         'application://banshee.desktop',
         'unity://expo-icon',
         'unity://devices'
