@@ -44,6 +44,8 @@ alias listeners="sudo lsof -i -P | grep LISTEN"
 alias cmds="cut -f1 -d' ' ~/.bash_history | sort | uniq -c | sort -nr | head -n 30"
 
 # http
+alias hosts="cat /etc/hosts"
+alias hoste="sudo vim /etc/hosts"
 alias sniff="sudo ngrep -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
@@ -51,12 +53,12 @@ alias httpdump="sudo tcpdump -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\"
 alias service="sudo service"
 
 alias nginx-re="service nginx restart"
-alias nginx-stop="service nginx stop"
+alias apache-re="service apache2 restart"
 
 # apt
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
-alias apts="sudo apt-cache search"
+alias apts="sudo aptitude search"
 alias aptsh="sudo aptitude show"
 alias aptup="sudo apt-get update"
 alias aptug="sduo apt-get upgrade"
