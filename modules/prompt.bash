@@ -61,12 +61,14 @@ _prompt_git_status()
         # without any remote branch, use the same name
         if [[ -z "$remote_branch" ]]; then
             remote_branch="$branch"
+        else
+            remote_branch="${remote_branch#refs/heads/}"
         fi
 
         local commits
         commits=0
         if [[ -n "$remote" && -n "$remote_branch" ]] ; then
-            commits=$(git rev-list --no-merges --count $remote/${remote_branch}..${branch} 2>/dev/null)
+            commits=$(git rev-list --no-merges --count ${remote}/${remote_branch}..${branch} 2>/dev/null)
             if [[ -z "$commits" ]] ; then
                 commits=0
             fi
@@ -74,7 +76,7 @@ _prompt_git_status()
 
         local has_commit
         if [[ "$commits" -gt "0" ]] ; then
-            has_commit=" ${CLR_RED}${commits} commit(s) behind"
+            has_commit="${CLR_BLUE} ${commits} behind remote"
         fi
 
         if [[ "$GD" -eq "1" ]] ; then
@@ -102,7 +104,7 @@ _prompt_git_status()
 
 function custom_prompt {
     local PSTIME="${CLR_GREY}[\$(date +%H:%M:%S)]${CLR_NONE} "
-    local PSHOST="${CLR_PURPLE}\h${CLR_NONE}" 
+    local PSHOST="${CLR_PURPLE}\h${CLR_NONE}"
     local PSUSER="${CLR_BLUE_L}\u${CLR_NONE}"
     local PSDIR="${CLR_GREEN}\w${CLR_NONE}"
     local PSGIT="\$(_prompt_git_status)"
