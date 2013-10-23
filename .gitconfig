@@ -49,6 +49,9 @@
 [diff]
 	renames = copies		# Detect copies as well as renames.
 
+[grep]
+	lineNumber = true
+
 # URL shorthands
 [url "git@github.com:"]
 	insteadOf = "gh:"
