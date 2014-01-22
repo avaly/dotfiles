@@ -78,11 +78,6 @@ update_and_upgrade() {
     sudo apt-get upgrade -qy
 }
 
-install_dotfiles() {
-    git clone git://github.com/avaly/dotfiles.git ~/.dotfiles
-    ~/.dotfiles/install.sh
-}
-
 
 #
 # Install Software
@@ -158,8 +153,6 @@ init_software() {
     #install_pkg "ubuntu-restricted-extras"
 
     install_pkg "git"
-
-    execute "install_dotfiles" "avaly dotfiles"
 
     install_pkg "curl"
     install_pkg "vim"
@@ -242,6 +235,28 @@ init_ui() {
 
 }
 
+
+#
+# Install config files for various applications
+#
+init_config_files() {
+
+	CONFIG=$HOME/.dotfiles/config
+
+	for FILE in $(find $CONFIG -type f -print); do
+		FILE=${FILE#$CONFIG/}
+		if [ -f $HOME/$FILE ]; then
+			echo "Replacing existing $HOME/$FILE"
+			rm $HOME/$FILE
+		else
+			echo "Symlinking $HOME/$FILE"
+		fi
+		ln -s $CONFIG/$FILE $HOME/$FILE
+	done
+
+}
+
+
 #
 # Clean Up & Restart
 #
@@ -260,4 +275,5 @@ init_cleanup() {
 
 init_software
 init_ui
+init_config_files
 init_cleanup
