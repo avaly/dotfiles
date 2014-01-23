@@ -6,7 +6,4 @@
 	<entry name="paste" mtime="1390407124" type="string">
 		<stringvalue>&lt;Primary&gt;v</stringvalue>
 	</entry>
-	<entry name="copy" mtime="1390407122" type="string">
-		<stringvalue>&lt;Primary&gt;c</stringvalue>
-	</entry>
 </gconf>

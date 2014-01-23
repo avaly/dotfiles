@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="background_darkness" mtime="1390407077" type="float" value="0.95"/>
+	<entry name="default_size_rows" mtime="1390468906" type="int" value="65"/>
+	<entry name="default_size_columns" mtime="1390468904" type="int" value="140"/>
+	<entry name="use_custom_default_size" mtime="1390468871" type="bool" value="true"/>
+	<entry name="background_darkness" mtime="1390407077" type="float" value="0.94"/>
 	<entry name="background_type" mtime="1390407066" type="string">
 		<stringvalue>transparent</stringvalue>
 	</entry>
