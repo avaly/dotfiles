@@ -13,7 +13,7 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 
 # Make some commands not show up in history
-export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g st:g ls:g d:g a .:g sta:exit:date:* --help"
+export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g st:g ls:g d:exit:date:* --help"
 
 
 
@@ -25,7 +25,7 @@ export EDITOR="vim"
 #
 # Terminal
 #
-export PATH="./node_modules/.bin:$HOME/bin:$PATH"
+export PATH="./node_modules/.bin:./../node_modules/.bin:$HOME/bin:$PATH"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
