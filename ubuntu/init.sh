@@ -237,27 +237,6 @@ init_ui() {
 
 
 #
-# Install config files for various applications
-#
-init_config_files() {
-
-	CONFIG=$HOME/.dotfiles/config
-
-	for FILE in $(find $CONFIG -type f -print); do
-		FILE=${FILE#$CONFIG/}
-		if [ -f $HOME/$FILE ]; then
-			echo "Replacing existing $HOME/$FILE"
-			rm $HOME/$FILE
-		else
-			echo "Symlinking $HOME/$FILE"
-		fi
-		ln -s $CONFIG/$FILE $HOME/$FILE
-	done
-
-}
-
-
-#
 # Clean Up & Restart
 #
 init_cleanup() {
@@ -275,5 +254,4 @@ init_cleanup() {
 
 init_software
 init_ui
-init_config_files
 init_cleanup

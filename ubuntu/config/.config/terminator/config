@@ -1,0 +1,33 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  tab_position = bottom
+  inactive_color_offset = 0.83
+[keybindings]
+  go_next = <Primary><Shift><Alt>n
+  new_window = <Primary><Shift>n
+  paste = <Primary>v
+  go_prev = <Primary><Shift><Alt>p
+[profiles]
+  [[default]]
+    use_system_font = False
+    copy_on_selection = True
+    background_darkness = 0.87
+    scrollback_lines = 9999
+    background_type = transparent
+    background_image = None
+    split_to_group = True
+    foreground_color = "#dddddd"
+    show_titlebar = False
+    font = Envy Code R 10
+    background_color = "#09131a"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

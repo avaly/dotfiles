@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/avaly/apps/quicktile/quicktile.py --daemonize
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=quicktile
+Name=quicktile
+Comment[en_US]=
+Comment=
