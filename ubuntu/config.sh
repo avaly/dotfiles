@@ -15,11 +15,16 @@ init_config_files() {
 
 	for FILE in $(find $CONFIG -type f -print); do
 		FILE=${FILE#$CONFIG/}
-		if [ -f $HOME/$FILE ]; then
-			echo "Replacing existing $HOME/$FILE"
-			rm $HOME/$FILE
+		if [ -h $HOME/$FILE ]; then
+			echo "Replacing existing symlink $HOME/$FILE"
+			unlink $HOME/$FILE
 		else
-			echo "Symlinking $HOME/$FILE"
+			if [ -f $HOME/$FILE ]; then
+				echo "Replacing existing file $HOME/$FILE"
+				rm $HOME/$FILE
+			else
+				echo "Symlinking $HOME/$FILE"
+			fi
 		fi
 		ln -s $CONFIG/$FILE $HOME/$FILE
 	done
