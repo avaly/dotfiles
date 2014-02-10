@@ -157,6 +157,7 @@ init_software() {
     install_pkg "curl"
     install_pkg "vim"
     install_pkg "mc"
+    install_pkg "parcellite"
 
     install_pkg "nodejs" "node"
     install_pkg "npm"
