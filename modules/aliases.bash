@@ -38,9 +38,9 @@ alias grep="grep -i --color=auto"
 
 # utils
 alias ips="ifconfig -a | grep -o 'inet addr:\(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet addr://'"
-alias sa="ssh-add"
 alias big="du -ks * | sort -n"
-alias listeners="sudo lsof -i -P | grep LISTEN"
+alias listen="sudo netstat -ntlp"
+alias conns="netstat -ntap | grep ESTABLISHED"
 alias cmds="cut -f1 -d' ' ~/.bash_history | sort | uniq -c | sort -nr | head -n 30"
 
 # http
@@ -71,3 +71,4 @@ alias update-fonts="sudo fc-cache -f -v"
 
 # repo
 alias dotfiles-pull="cd ~/.dotfiles && git fetch origin && git reset --hard origin/master"
+
