@@ -26,6 +26,11 @@ init_config_files() {
 				echo "Symlinking $HOME/$FILE"
 			fi
 		fi
+		DIR=$(dirname $HOME/$FILE)
+		if [ ! -d $DIR ]; then
+			echo "Creating directory $DIR"
+			mkdir -p $DIR
+		fi
 		ln -s $CONFIG/$FILE $HOME/$FILE
 	done
 
