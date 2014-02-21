@@ -48,6 +48,7 @@ alias hosts="cat /etc/hosts"
 alias hoste="sudo vim /etc/hosts"
 alias sniff="sudo ngrep -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias traffic="sudo jnettop -i eth0"
 
 # ssh
 alias sshe="vim ~/.ssh/config"
