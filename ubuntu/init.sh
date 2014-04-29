@@ -117,14 +117,12 @@ init_software() {
     # Add software sources
 
     # Firefox Nightly
-    [ $(cmd_exists "firefox-trunk") -eq 0 ] \
-        && add_ppa "ubuntu-mozilla-daily/ppa"
 
     # Google Chrome
     [ $(cmd_exists "google-chrome") -eq 0 ] \
         && add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
         && add_source_list \
-                "http://dl.google.com/linux/deb/ stable main" \
+                "http://dl.google.com/linux/chrome/deb/ stable main" \
                 "google-chrome.list"
 
     # NodeJS
@@ -157,24 +155,26 @@ init_software() {
     install_pkg "curl"
     install_pkg "vim"
     install_pkg "mc"
+    install_pkg "terminator"
     install_pkg "parcellite"
 
     install_pkg "nodejs" "node"
     install_pkg "npm"
     install_pkg "apache2"
 
-    install_pkg "chromium-browser"
-    install_pkg "firefox-trunk"
-    install_pkg "google-chrome-unstable" "google-chrome"
+    install_pkg "firefox"
+    install_pkg "google-chrome-stable"
+    install_pkg "google-chrome-unstable"
     install_pkg "opera"
     # install_pkg "opera-next"
 
     install_pkg "virtualbox"
+    install_pkg "vagrant"
     install_pkg "filezilla"
     install_pkg "nautilus-dropbox" "dropbox"
     install_pkg "krusader"
 
-    install_pkg "banshee"
+    install_pkg "amarok"
     install_pkg "vlc"
     install_pkg "gimp"
 
@@ -215,7 +215,7 @@ init_ui() {
     # Set Launcher favorites
     gsettings set com.canonical.Unity.Launcher favorites "[
         'application://nautilus.desktop',
-        'application://gnome-terminal.desktop',
+        'application://terminator.desktop',
         'application://firefox.desktop',
         'application://google-chrome.desktop',
         'application://opera-browser.desktop',
@@ -226,13 +226,9 @@ init_ui() {
         'application://sublime.desktop',
         'application://filezilla.desktop',
         'application://kde4-krusader.desktop',
-        'application://banshee.desktop',
         'unity://expo-icon',
         'unity://devices'
     ]"
-
-    # Reset all locale to en_US
-    sudo cp locale /etc/default/locale
 
 }
 
