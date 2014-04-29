@@ -39,6 +39,11 @@ install_pkg() {
       && execute_str "sudo apt-get install --allow-unauthenticated -qy $1" "$1"
 }
 
+install_deb() {
+    wget -q -O /tmp/$1.deb "$2"
+    execute_str "dpkg -i /tmp/$1.deb"
+}
+
 mkd() {
     if [ -n "$1" ]; then
         if [ -e "$1" ]; then
@@ -116,8 +121,6 @@ init_software() {
 
     # Add software sources
 
-    # Firefox Nightly
-
     # Google Chrome
     [ $(cmd_exists "google-chrome") -eq 0 ] \
         && add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
@@ -135,6 +138,13 @@ init_software() {
         && add_source_list \
                 "http://deb.opera.com/opera/ stable non-free" \
                 "opera.list"
+
+    # Sublime Text
+    [ $(cmd_exists "sublime_text") -eq 0 ] \
+        && add_ppa "webupd8team/sublime-text-2"
+
+    [ $(cmd_exists "psensor") ] \
+        && add_ppa "jfi/ppa"
 
     execute "update_and_upgrade" "update & upgrade"
 
@@ -157,6 +167,7 @@ init_software() {
     install_pkg "mc"
     install_pkg "terminator"
     install_pkg "parcellite"
+    install_pkg "sublime-text"
 
     install_pkg "nodejs" "node"
     install_pkg "npm"
@@ -166,19 +177,23 @@ init_software() {
     install_pkg "google-chrome-stable"
     install_pkg "google-chrome-unstable"
     install_pkg "opera"
-    # install_pkg "opera-next"
 
     install_pkg "virtualbox"
     install_pkg "vagrant"
     install_pkg "filezilla"
     install_pkg "nautilus-dropbox" "dropbox"
     install_pkg "krusader"
+    install_pkg "launchy"
+
+    install_pkg "indicator-multiload"
+    install_pkg "lm-sensors"
+    # sudo sensors-detect
+    install_pkg "psensor"
 
     install_pkg "amarok"
     install_pkg "vlc"
     install_pkg "gimp"
-
-    install_pkg "ccsm"
+    install_deb "xnview" "http://download.xnview.com/XnViewMP-linux-x64.deb"
 
 }
 
@@ -190,6 +205,9 @@ init_ui() {
     print_info "UI Settings"
 
     # Get all settings: `gsettings list-recursively`
+
+    # Integrate menus in window title bar
+    gsettings set com.canonical.Unity integrated-menus true
 
     # Hide the Battery icon from the menu bar when the battery is not in use
     gsettings set com.canonical.indicator.power icon-policy "charge"
@@ -218,17 +236,20 @@ init_ui() {
         'application://terminator.desktop',
         'application://firefox.desktop',
         'application://google-chrome.desktop',
+        'application://google-chrome-unstable.desktop',
         'application://opera-browser.desktop',
         'application://thunderbird.desktop',
         'application://ubuntu-software-center.desktop',
         'application://gnome-control-center.desktop',
-        'unity://running-apps',
-        'application://sublime.desktop',
-        'application://filezilla.desktop',
+        'application://sublime-text-2.desktop',
         'application://kde4-krusader.desktop',
-        'unity://expo-icon',
-        'unity://devices'
+        'unity://running-apps'
     ]"
+
+    # indicator-multiload
+    gsettings set de.mh21.indicator.multiload.general autostart true
+    gsettings set de.mh21.indicator.multiload.general width 50
+    gsettings set de.mh21.indicator.multiload.general speed 3000
 
 }
 
