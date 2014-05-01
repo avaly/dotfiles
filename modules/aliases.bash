@@ -67,7 +67,8 @@ alias aptsh="sudo aptitude show"
 alias aptup="sudo apt-get update"
 alias aptug="sduo apt-get upgrade"
 
-# ubuntu
+# desktop
+alias subl="sublime `pwd` &"
 alias update-fonts="sudo fc-cache -f -v"
 
 # repo
