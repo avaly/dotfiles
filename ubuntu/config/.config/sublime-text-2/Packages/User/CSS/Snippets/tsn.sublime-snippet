@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[text-shadow: none;$0]]></content>
+	<tabTrigger>tsn</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

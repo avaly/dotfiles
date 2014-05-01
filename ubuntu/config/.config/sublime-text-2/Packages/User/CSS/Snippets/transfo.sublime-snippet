@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[-webkit-transform-origin: ${1:0} ${2:0};
+-moz-transform-origin:    $1 $2;
+-ms-transform-origin:     $1 $2;
+-o-transform-origin:      $1 $2;
+transform-origin:         $1 $2;$0]]></content>
+	<tabTrigger>transfo</tabTrigger>
+	<scope>source.css</scope>
+</snippet>

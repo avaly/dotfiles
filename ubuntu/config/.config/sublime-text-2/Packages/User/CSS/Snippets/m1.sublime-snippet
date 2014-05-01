@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[margin: 0 0 ${1:1em};$0]]></content>
+	<tabTrigger>m1</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[#gradient .${1:horizontal}-custom(#$2, "#$3, #$4");]]></content>
+	<tabTrigger>gradc</tabTrigger>
+	<description>LESS</description>
+	<scope>source.css.less</scope>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[background: #$4;
+background: -webkit-gradient(linear, left top, left bottom, from(#$1), color-stop(.5, #$2), to(#$3));
+background: -webkit-linear-gradient(#$1, #$2 50%, #$3);
+background:    -moz-linear-gradient(#$1, #$2 50%, #$3);
+background:     -ms-linear-gradient(#$1, #$2 50%, #$3);
+background:      -o-linear-gradient(#$1, #$2 50%, #$3);
+background:         linear-gradient(#$1, #$2 50%, #$3);
+-pie-background:    linear-gradient(#$1, #$2 50%, #$3);$0]]></content>
+	<tabTrigger>grads</tabTrigger>
+	<scope>source.css</scope>
+</snippet>

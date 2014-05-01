@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[z-index: $1;$0]]></content>
+	<tabTrigger>zi</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

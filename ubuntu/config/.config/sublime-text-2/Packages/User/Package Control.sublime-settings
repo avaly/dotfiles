@@ -1,0 +1,28 @@
+{
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"ApacheConf.tmLanguage",
+		"Change Tracker",
+		"CoffeeScript",
+		"ColorPicker",
+		"DocBlockr",
+		"EditorConfig",
+		"Function Name Display",
+		"GitGutter",
+		"HTML5",
+		"Http Requester",
+		"Hyperion for gettext",
+		"INI",
+		"LESS",
+		"Markdown Extended",
+		"Markdown Preview",
+		"Open-Include",
+		"Package Control",
+		"Sass",
+		"StringEncode",
+		"SublimeLinter",
+		"Theme - Soda",
+		"Zeal"
+	]
+}

@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+query_posts(array(
+	'post_type' => '${1:post}',
+${2:	'tax_query' => array(
+		array(
+			'taxonomy' => '',
+			'field' => 'id',
+			'terms' => '',
+		)
+	),
+}${3:	'meta_query' => array(
+		array(
+			'key' => '',
+			'value' => '',
+			'compare' => '>',
+		)
+	),
+}${4:	'posts_per_page' => -1,
+}${5:	'orderby' => '${6:menu_order}',
+	'order' => '${7:ASC}',}
+));
+
+if (have_posts())
+{
+	while (have_posts())
+	{
+		the_post();
+
+		$8
+	}
+}
+
+wp_reset_query();
+$0]]></content>
+	<tabTrigger>wpq</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

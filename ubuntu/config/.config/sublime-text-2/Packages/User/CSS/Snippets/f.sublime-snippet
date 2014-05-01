@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[font: ${1:1em/1.2} ${2:Arial}, sans-serif;$0]]></content>
+	<tabTrigger>f</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

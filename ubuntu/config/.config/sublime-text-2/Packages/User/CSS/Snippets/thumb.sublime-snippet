@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[.thumb {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+	.thumb em, .thumb img {
+		vertical-align: middle;
+	}
+.ie7m .thumb em {
+	display: inline-block;
+	height: 100%;
+}$0]]></content>
+	<tabTrigger>thumb</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[font-family: Georgia, Palatino, 'Palatino Linotype', serif;$0]]></content>
+	<tabTrigger>ffg</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[@-moz-document url-prefix() {
+	$1
+}$0]]></content>
+	<tabTrigger>hff</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

@@ -1,0 +1,21 @@
+[
+
+// My Preferences
+
+	{
+		"caption": "Preferences: my commands",
+		"command": "open_file",
+		"args": { "file": "${packages}/User/my.sublime-commands" }
+	},
+	{
+		"caption": "Preferences: my context menu",
+		"command": "open_file",
+		"args": { "file": "${packages}/User/Context.sublime-menu" }
+	},
+	{
+		"caption": "Preferences: my key bindings",
+		"command": "open_file",
+		"args": { "file": "${packages}/User/Default.sublime-keymap" }
+	}
+
+]

@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[height: $1px;$0]]></content>
+	<tabTrigger>hh</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

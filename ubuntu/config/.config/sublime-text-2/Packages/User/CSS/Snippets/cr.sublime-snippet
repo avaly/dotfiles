@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[cursor: ${1:pointer};$0]]></content>
+	<tabTrigger>cr</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

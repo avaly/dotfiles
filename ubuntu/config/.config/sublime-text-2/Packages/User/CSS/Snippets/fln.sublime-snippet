@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[float: none;$0]]></content>
+	<tabTrigger>fln</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

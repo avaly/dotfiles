@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[list-style: disc;$0]]></content>
+	<tabTrigger>lsd</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

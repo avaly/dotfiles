@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[${1:method}: function() {
+	$0
+}${2:,}]]></content>
+    <tabTrigger>fno</tabTrigger>
+    <scope>source.js</scope>
+    <description>…: function() {…}</description>
+</snippet>

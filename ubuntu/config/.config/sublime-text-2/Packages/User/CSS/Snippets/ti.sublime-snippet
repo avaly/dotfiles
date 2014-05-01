@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[text-indent: -999em;$0]]></content>
+	<tabTrigger>ti</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

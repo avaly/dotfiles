@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[display: inline-block;$0]]></content>
+	<tabTrigger>ib</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>

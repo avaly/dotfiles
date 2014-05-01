@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[font-size: 116.67%;$0]]></content>
+	<tabTrigger>fs14</tabTrigger>
+	<scope>source.css, source.less, source.sass, source.ecss</scope>
+</snippet>
