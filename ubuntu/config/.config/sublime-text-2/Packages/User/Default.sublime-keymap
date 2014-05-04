@@ -88,6 +88,12 @@
 		}
 	},
 
+ 	{
+ 		"keys": ["ctrl+shift+t"],
+ 		"command": "run_macro_file",
+ 		"args": {"file": "Packages/User/Fix-Tabs.sublime-macro"}
+	},
+
 // plugins
 
 	{ "keys": ["ctrl+alt+forward_slash"], "command": "google_it" },

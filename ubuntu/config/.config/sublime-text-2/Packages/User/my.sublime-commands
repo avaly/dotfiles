@@ -1,7 +1,5 @@
 [
-
-// My Preferences
-
+// preferences
 	{
 		"caption": "Preferences: my commands",
 		"command": "open_file",
@@ -17,5 +15,4 @@
 		"command": "open_file",
 		"args": { "file": "${packages}/User/Default.sublime-keymap" }
 	}
-
 ]
