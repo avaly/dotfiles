@@ -246,6 +246,12 @@ init_ui() {
         'unity://running-apps'
     ]"
 
+    # fonts
+    gsettings set org.gnome.desktop.interface font-name "Droid Sans 11"
+    gsettings set org.gnome.desktop.interface document-font-name "Droid Sans 11"
+    gsettings set org.gnome.desktop.interface monospace-font-name "Droid Sans Mono 13"
+    gsettings set org.gnome.desktop.wm.preferences titlebar-font "Droid Sans Bold 11"
+
     # indicator-multiload
     gsettings set de.mh21.indicator.multiload.general autostart true
     gsettings set de.mh21.indicator.multiload.general width 50
