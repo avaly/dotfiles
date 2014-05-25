@@ -72,7 +72,6 @@ alias aptup="sudo apt-get update"
 alias aptug="sduo apt-get upgrade"
 
 # desktop
-alias subl="sublime -a $@ & 2>/dev/null"
 alias update-fonts="sudo fc-cache -f -v"
 
 # repo

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/opt/sublime_text_2/sublime_text -n $@ &
+
