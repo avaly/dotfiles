@@ -59,6 +59,10 @@ alias service="sudo service"
 alias nginx-re="service nginx restart"
 alias apache-re="service apache2 restart"
 
+alias vu="vagrant up"
+alias vh="vagrant halt"
+alias vs="vagrant ssh"
+
 # apt
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
@@ -68,7 +72,7 @@ alias aptup="sudo apt-get update"
 alias aptug="sduo apt-get upgrade"
 
 # desktop
-alias subl="sublime `pwd` &"
+alias subl="sublime -a $@ & 2>/dev/null"
 alias update-fonts="sudo fc-cache -f -v"
 
 # repo
