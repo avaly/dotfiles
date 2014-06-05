@@ -1,0 +1,7 @@
+#!/bin/bash
+
+INPUT=$1
+OUTPUT="$INPUT.gif"
+
+ffmpeg -i "$INPUT" -r 5 -pix_fmt rgb24 "$OUTPUT"
+convert "$OUTPUT" -fuzz 3% -layers Optimize "$OUTPUT"
