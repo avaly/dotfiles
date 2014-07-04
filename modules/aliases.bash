@@ -63,6 +63,8 @@ alias vu="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant ssh"
 
+alias dk="sudo docker"
+
 # apt
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
