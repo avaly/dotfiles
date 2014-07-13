@@ -1,0 +1,20 @@
+{
+    "sublime_auto_complete": true,
+    "codeintel_tooltips": "panel",
+    "codeintel_live": false,
+    "codeintel_selected_catalogs": [
+        "jQuery", "Rails"
+    ],
+    "codeintel_config": {
+        "JavaScript": {
+            "javascriptExtraPaths": [],
+            "codeintel_scan_files_in_project": true,
+            "codeintel_max_recursive_dir_depth": 10
+        },
+        "PHP": {
+            "phpExtraPaths": [],
+            "codeintel_scan_files_in_project": true,
+            "codeintel_max_recursive_dir_depth": 10
+        }
+    }
+}
