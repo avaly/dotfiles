@@ -80,13 +80,8 @@ _prompt_git_status()
         fi
 
         if [[ "$GD" -eq "1" ]] ; then
-            local lines_add
-            local lines_del
-            lines_add=$(git diff --numstat 2>/dev/null | awk 'NF==3 {plus+=$1} END {printf("+%d", plus)}')
-            lines_del=$(git diff --numstat 2>/dev/null | awk 'NF==3 {x+=$1; minus+=$2} END {printf("-%d\n", minus)}')
-
             # unstaged changes
-            ret="${CLR_RED_L}${branch} ${CLR_GREEN}${lines_add}${CLR_GREY}:${CLR_RED}${lines_del}${has_staged}${has_untracked}${has_commit}${has_stash}"
+            ret="${CLR_RED_L}${branch}${has_staged}${has_untracked}${has_commit}${has_stash}"
         else
             if [[ "$GDC" -eq "1" ]] ; then
                 # staged changes
