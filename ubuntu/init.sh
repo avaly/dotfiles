@@ -209,6 +209,9 @@ init_ui() {
     # Integrate menus in window title bar
     gsettings set com.canonical.Unity integrated-menus true
 
+	# Ubuntu HUD key binding
+	gsettings set org.compiz.integrated show-hud "['<Alt><Super>']"
+
     # Hide the Battery icon from the menu bar when the battery is not in use
     gsettings set com.canonical.indicator.power icon-policy "charge"
     gsettings set com.canonical.indicator.power show-time false
@@ -218,8 +221,8 @@ init_ui() {
 
     # Customize the Sound icon from the menu bar
     gsettings set com.canonical.indicator.sound visible true
-    gsettings set com.canonical.indicator.sound interested-media-players "['banshee']"
-    gsettings set com.canonical.indicator.sound preferred-media-players "['banshee']"
+    gsettings set com.canonical.indicator.sound interested-media-players "['amarok']"
+    gsettings set com.canonical.indicator.sound preferred-media-players "['amarok']"
 
     # Set keyboard languages and show the Language icon in menu bar
     gsettings set org.gnome.libgnomekbd.keyboard layouts "['us','se','ro']"

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=krusader
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Krusader
+Comment=
