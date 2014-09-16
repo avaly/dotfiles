@@ -1,5 +1,6 @@
 {
 	"auto_complete_commit_on_tab": true,
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/User/Tubster.tmTheme",
 	"default_line_ending": "unix",
 	"draw_white_space": "selection",
@@ -33,6 +34,7 @@
 	"scroll_speed": 1,
 	"shift_tab_unindent": true,
 	"soda_classic_tabs": true,
+	"spell_check": false,
 	"tab_completion": false,
 	"theme": "Soda Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
