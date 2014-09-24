@@ -82,12 +82,14 @@
 	su = submodule update
 	pl = !"git pull --ff-only --rebase origin; git su;"
 	ps = push origin HEAD
+	rbc = rebase --continue
 	r = checkout --
 	rs = checkout --
 	reset = checkout --
 	undo = reset --soft HEAD^
 	ms = checkout master
 	prod = checkout production
+	rd = checkout ready
 	sl = stash list
 	ss = stash save
 	sa = stash apply
