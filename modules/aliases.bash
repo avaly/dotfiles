@@ -7,8 +7,8 @@ alias got="git"
 alias fur="git"
 alias hoy="git"
 
-alias ga="git-aliases.sh"
-alias gal="git-aliases.sh"
+alias ga="git-aliases"
+alias gal="git-aliases"
 
 # node
 alias gr="grunt"

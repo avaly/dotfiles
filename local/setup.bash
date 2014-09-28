@@ -1,6 +1,3 @@
 #
-# Start ssh-agent
+# Custom setup
 #
-
-#eval $(ssh-agent)
-#ssh-add
