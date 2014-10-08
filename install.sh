@@ -22,8 +22,11 @@ echo "source ~/.dotfiles/index-login.bash" > ~/.bash_profile
 echo "source ~/.dotfiles/index-nonlogin.bash" > ~/.bashrc
 
 mkdir ~/bin 2> /dev/null
-cp -n ~/.dotfiles/bin/* ~/bin
-chmod a+x ~/bin/*
+for FILE in ~/.dotfiles/bin/*
+do
+	NAME=$(basename $FILE)
+	ln -s -f $FILE ~/bin/$NAME
+done
 
 mkdir ~/.dotfiles.local 2> /dev/null
 cp -n ~/.dotfiles/local/* ~/.dotfiles.local
@@ -31,9 +34,12 @@ cp -n ~/.dotfiles/local/* ~/.dotfiles.local
 # git
 ln -s -f ~/.dotfiles/.gitconfig ~/.gitconfig
 # git-extras
-git clone --depth 1 https://github.com/visionmedia/git-extras.git /tmp/git-extras
-cd /tmp/git-extras
-sudo make install
+$(which git-extras)
+if [[ $? -ne 0 ]]; then
+	git clone --depth 1 https://github.com/visionmedia/git-extras.git /tmp/git-extras
+	cd /tmp/git-extras
+	sudo make install
+fi
 
 # vim
 ln -s -f ~/.dotfiles/.vimrc ~/.vimrc
