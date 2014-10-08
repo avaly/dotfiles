@@ -28,7 +28,12 @@ chmod a+x ~/bin/*
 mkdir ~/.dotfiles.local 2> /dev/null
 cp -n ~/.dotfiles/local/* ~/.dotfiles.local
 
+# git
 ln -s -f ~/.dotfiles/.gitconfig ~/.gitconfig
+# git-extras
+git clone --depth 1 https://github.com/visionmedia/git-extras.git /tmp/git-extras
+cd /tmp/git-extras
+sudo make install
 
 # vim
 ln -s -f ~/.dotfiles/.vimrc ~/.vimrc
