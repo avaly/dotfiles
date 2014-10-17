@@ -96,6 +96,8 @@
 	sd = stash drop
 	amend = commit --amend
 	ammend = commit --amend
+	amedn = commit --amend
+	am = commit --amend
 	fl = log -u
 	d = diff --color-words
 	df = diff
