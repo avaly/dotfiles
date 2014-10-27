@@ -79,7 +79,7 @@
 	cmsa = commit --no-verify -a -m
 	cp = cherry-pick
 	br = branch
-	su = submodule update
+	su = submodule update --recursive
 	pl = !"git pull --ff-only --rebase origin; git su;"
 	ps = push origin HEAD
 	rbc = rebase --continue
