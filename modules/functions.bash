@@ -67,3 +67,10 @@ digg()
 {
     dig +nocmd $1 any +multiline +noall +answer
 }
+
+# Docker
+docker-stop()
+{
+	docker stop $(docker ps -a -q)
+}
+

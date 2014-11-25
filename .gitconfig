@@ -98,6 +98,8 @@
 	ammend = commit --amend
 	amedn = commit --amend
 	am = commit --amend
+	amends = commit --amend --no-verify
+	ams = commit --amend --no-verify
 	fl = log -u
 	d = diff --color-words
 	df = diff
