@@ -12,8 +12,7 @@ alias gal="git-aliases"
 
 # node
 alias gr="grunt"
-alias npmi="npm install"
-alias npmr="npm remove"
+alias nr="npm run"
 
 # fs
 alias ..="cd .."
@@ -63,7 +62,7 @@ alias vu="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant ssh"
 
-alias dk="sudo docker"
+alias dks="docker stop -t 1 $(docker ps -aq)"
 
 # apt
 alias apti="sudo apt-get install"
