@@ -41,6 +41,7 @@ alias big="du -ks * | sort -n"
 alias listen="sudo netstat -ntlp"
 alias conns="netstat -ntap | grep ESTABLISHED"
 alias cmds="cut -f1 -d' ' ~/.bash_history | sort | uniq -c | sort -nr | head -n 30"
+alias memcache-clear="echo 'flush_all' | nc localhost 11211"
 
 # http
 alias hosts="cat /etc/hosts"
