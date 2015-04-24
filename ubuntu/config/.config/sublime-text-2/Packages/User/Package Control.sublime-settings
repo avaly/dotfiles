@@ -1,16 +1,21 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"All Autocomplete",
 		"ApacheConf.tmLanguage",
 		"Change Tracker",
 		"CoffeeScript",
+		"Color Highlighter",
 		"ColorPicker",
 		"DocBlockr",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"Function Name Display",
 		"GitGutter",
+		"GitHubinator",
 		"Haml",
 		"HTML Mustache",
 		"HTML5",

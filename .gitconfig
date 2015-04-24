@@ -69,7 +69,7 @@
 	co = checkout
 	checout = checkout
 	nb = checkout -b
-	brm = !"git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
+	brm = !"git branch --merged | grep -v \"\\*\" | grep -v \"^[^/]\\+$\" | xargs -n 1 git branch -d"
 	cl = clone --recursive
 	cm = commit -m
 	cma = commit -a -m
