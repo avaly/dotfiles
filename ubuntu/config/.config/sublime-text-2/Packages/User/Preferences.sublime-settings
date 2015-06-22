@@ -21,7 +21,23 @@
 	"ignored_packages":
 	[
 		"Vintage",
-		"HTML"
+		"HTML",
+		"SublimeLinter",
+		"RestructuredText"
+	],
+	"ignored_words":
+	[
+		"app",
+		"changelog",
+		"inline",
+		"npm",
+		"phantomjs",
+		"plugin",
+		"plugins",
+		"rebase",
+		"refactor",
+		"reflow",
+		"reflows"
 	],
 	"indent_guide_options":
 	[

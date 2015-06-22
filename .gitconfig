@@ -40,6 +40,9 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
+[fetch]
+	recurseSubmodules = on-demand
+
 [log]
 	date = iso
 
@@ -48,6 +51,7 @@
 
 [diff]
 	renames = copies		# Detect copies as well as renames.
+	submodule = log
 
 [grep]
 	lineNumber = true
@@ -79,8 +83,8 @@
 	cmsa = commit --no-verify -a -m
 	cp = cherry-pick
 	br = branch
-	su = submodule update --recursive
-	pl = !"git pull --ff-only --rebase origin; git su;"
+	su = submodule update --init --recursive
+	pl = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
 	ps = push origin HEAD
 	rbc = rebase --continue
 	r = checkout --
