@@ -15,6 +15,7 @@ MODULES=(
 	'functions.bash'
 	'prompt.bash'
 	'git-completion.bash'
+	'init.bash'
 )
 
 function _load_modules {
