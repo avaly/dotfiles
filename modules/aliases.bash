@@ -10,6 +10,12 @@ alias hoy="git"
 alias ga="git-aliases"
 alias gal="git-aliases"
 
+# mercurial
+alias h="hg"
+alias ham="hg amend"
+alias hdiff="hg diff"
+alias hdif="hg diff"
+
 # node
 alias gr="grunt"
 alias nr="npm run"
@@ -72,6 +78,8 @@ alias apts="sudo aptitude search"
 alias aptsh="sudo aptitude show"
 alias aptup="sudo apt-get update"
 alias aptug="sduo apt-get upgrade"
+
+alias clean-boot="sudo apt-get purge $(dpkg -l linux-{image,headers}-\"[0-9]*\" | awk '/ii/{print $2}' | grep -ve \"$(uname -r | sed -r 's/-[a-z]+//')\")"
 
 # desktop
 alias update-fonts="sudo fc-cache -f -v"
