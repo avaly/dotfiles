@@ -68,3 +68,14 @@ digg()
     dig +nocmd $1 any +multiline +noall +answer
 }
 
+dks()
+{
+	docker stop -t 1 $(docker ps -aq)
+}
+
+clean-boot()
+{
+	local KERNEL_VERSION=$(uname -r | sed -r 's/-[a-z]+//')
+	local OLD_KERNEL_VERSIONS=$(dpkg -l linux-{image,headers}-"[0-9]*" | awk '/ii/{print $2}' | grep -ve "$KERNEL_VERSION")
+	sudo apt-get purge $OLD_KERNEL_VERSIONS
+}

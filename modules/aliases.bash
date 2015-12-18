@@ -69,8 +69,6 @@ alias vu="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant ssh"
 
-alias dks="docker stop -t 1 $(docker ps -aq)"
-
 # apt
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
@@ -78,8 +76,6 @@ alias apts="sudo aptitude search"
 alias aptsh="sudo aptitude show"
 alias aptup="sudo apt-get update"
 alias aptug="sduo apt-get upgrade"
-
-alias clean-boot="sudo apt-get purge $(dpkg -l linux-{image,headers}-\"[0-9]*\" | awk '/ii/{print $2}' | grep -ve \"$(uname -r | sed -r 's/-[a-z]+//')\")"
 
 # desktop
 alias update-fonts="sudo fc-cache -f -v"
