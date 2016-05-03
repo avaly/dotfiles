@@ -73,6 +73,11 @@ dks()
 	docker stop -t 1 $(docker ps -aq)
 }
 
+dkrmi()
+{
+	docker rmi $(docker images -f "dangling=true" -q)
+}
+
 clean-boot()
 {
 	local KERNEL_VERSION=$(uname -r | sed -r 's/-[a-z]+//')

@@ -69,6 +69,9 @@ alias vu="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant ssh"
 
+alias dk="docker"
+alias dkc="docker-compose"
+
 # apt
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
@@ -79,6 +82,7 @@ alias aptug="sduo apt-get upgrade"
 
 # desktop
 alias update-fonts="sudo fc-cache -f -v"
+alias open="xdg-open"
 
 # repo
 alias dotfiles-pull="cd ~/.dotfiles && git fetch origin && git reset --hard origin/master"
