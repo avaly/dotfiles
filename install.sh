@@ -36,8 +36,10 @@ ln -s -f ~/.dotfiles/.gitconfig ~/.gitconfig
 # git-extras
 $(which git-extras)
 if [[ $? -ne 0 ]]; then
-	git clone --depth 1 https://github.com/visionmedia/git-extras.git /tmp/git-extras
+	git clone --depth 1 https://github.com/tj/git-extras.git /tmp/git-extras
 	cd /tmp/git-extras
+	rm bin/git-undo
+	rm man/git-undo*
 	sudo make install
 fi
 
