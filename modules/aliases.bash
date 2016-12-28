@@ -36,7 +36,7 @@ alias l="ls -CF --color=auto"
 alias m="more"
 
 alias cp="cp -v"
-alias rm="rm -Iv"
+alias rm="rm -I"
 alias mv="mv -v"
 
 alias grep="grep -i --color=auto"
