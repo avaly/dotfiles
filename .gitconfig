@@ -36,6 +36,9 @@
 	changed = magenta
 	untracked = cyan
 
+[branch]
+	autosetuprebase = always
+
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
@@ -81,19 +84,22 @@
 	cmma = commit -a
 	cms = commit --no-verify -m
 	cmsa = commit --no-verify -a -m
+	fix = commit --fixup
 	cp = cherry-pick
 	br = branch
 	su = submodule update --init --recursive
 	pl = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
 	ps = push origin HEAD
 	rbc = rebase --continue
+	rbi = rebase --interactive --autosquash master
+	rbms = rebase master
 	r = checkout --
 	rs = checkout --
 	reset = checkout --
 	undo = reset --soft HEAD^
 	ms = checkout master
 	prod = checkout production
-	rd = checkout ready
+	mrg = merge --ff-only
 	sl = stash list
 	ss = stash save
 	sa = stash apply
