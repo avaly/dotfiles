@@ -22,6 +22,7 @@ alias nr="npm run"
 alias yar="yarn"
 alias ya="yarn"
 alias yn="yarn"
+alias yarn-refresh="rm yarn.lock && yarn && git add yarn.lock"
 
 # fs
 alias ..="cd .."

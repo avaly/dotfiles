@@ -1,7 +1,8 @@
 #!/bin/bash
 
+FRAME_RATE=${2:-5}
 INPUT=$1
 OUTPUT="$INPUT.gif"
 
-ffmpeg -i "$INPUT" -r 5 -pix_fmt rgb24 "$OUTPUT"
+ffmpeg -i "$INPUT" -r $FRAME_RATE -pix_fmt rgb24 "$OUTPUT"
 convert "$OUTPUT" -fuzz 3% -layers Optimize "$OUTPUT"

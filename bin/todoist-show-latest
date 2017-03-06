@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#
+
+set -euo pipefail
+
+TODOIST_API_URL="https://todoist.com/API/v7/sync"
+TODOS_CACHE="/tmp/todos-$(date +%Y%m%d)"
+
+function getTodos {
+	echo "Fetching TODOs..."
+	local ALL=$(curl -s \
+		$TODOIST_API_URL \
+		-d token="$TODOIST_API_KEY" \
+		-d sync_token="*" \
+		-d resource_types='["items"]')
+
+	echo $ALL > /tmp/todos
+	echo $ALL | \
+		jq '.items' | \
+		jq 'sort_by(.item_order)' | \
+		jq '.[0:10]' | \
+		jq '.[].content' \
+		> $TODOS_CACHE
+}
+
+function showTodos {
+	if [[ ! -f $TODOS_CACHE ]]; then
+		getTodos
+	fi
+
+	echo "My TODOS:"
+	echo ""
+	cat $TODOS_CACHE
+	echo ""
+}
+
+showTodos
+
