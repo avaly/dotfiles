@@ -46,6 +46,9 @@
 [fetch]
 	recurseSubmodules = on-demand
 
+[pull]
+	rebase = true
+
 [log]
 	date = iso
 
@@ -68,15 +71,20 @@
 	insteadOf = "github:"
 
 [alias]
-	s = status -s
-	st = status
 	a = add
 	ad = add
 	ap = add -p
+	amend = commit --amend
+	ammend = commit --amend
+	amedn = commit --amend
+	am = commit --amend
+	amends = commit --amend --no-verify
+	ams = commit --amend --no-verify
 	co = checkout
 	checout = checkout
-	nb = checkout -b
+	both = diff HEAD
 	brm = !"git branch --merged | grep -v \"\\*\" | grep -v \"^[^/]\\+$\" | xargs -n 1 git branch -d"
+	br = branch
 	cl = clone --recursive
 	cm = commit -m
 	cma = commit -a -m
@@ -84,45 +92,41 @@
 	cmma = commit -a
 	cms = commit --no-verify -m
 	cmsa = commit --no-verify -a -m
-	fix = commit --fixup
 	cp = cherry-pick
-	br = branch
-	su = submodule update --init --recursive
-	pl = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
-	ps = push origin HEAD
-	rbc = rebase --continue
-	rbi = rebase --interactive --autosquash master
-	rbms = rebase master
-	r = checkout --
-	rs = checkout --
-	reset = checkout --
-	undo = reset --soft HEAD^
-	ms = checkout master
-	prod = checkout production
-	mrg = merge --ff-only
-	sl = stash list
-	ss = stash save
-	sa = stash apply
-	sd = stash drop
-	amend = commit --amend
-	ammend = commit --amend
-	amedn = commit --amend
-	am = commit --amend
-	amends = commit --amend --no-verify
-	ams = commit --amend --no-verify
-	fl = log -u
 	d = diff --color-words
 	df = diff
-	sta = diff --cached --color-words
-	staged = diff --cached
 	dl = diff HEAD^
-	both = diff HEAD
-	unsta = reset HEAD
-	unstage = reset HEAD
-
+	fhist = log --follow -p --
+	filehistory = log --follow -p --
+	fix = commit --fixup
+	flog = log --follow -p --
+	grp = grep --heading --line-number
 	l = log -n 50 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	ls = log -n 10 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lgs = log -n 30 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)' --abbrev-commit --date=relative
 	lg = !"git l"
 	last = log -n 1
-
+	mrg = merge --ff-only
+	ms = checkout master
+	nb = checkout -b
+	pl = pull --ff-only --rebase origin
+	pls = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
+	ps = push origin HEAD
+	prod = checkout production
+	reset = checkout --
+	rs = checkout --
+	rbc = rebase --continue
+	rbi = rebase --interactive --autosquash master
+	rbms = rebase master
+	s = status -s
+	sa = stash apply
+	sd = stash drop
+	sl = stash list
+	ss = stash save
+	st = status
+	su = submodule update --init --recursive
+	sta = diff --cached --color-words
+	staged = diff --cached
+	undo = reset --soft HEAD^
+	unsta = reset HEAD
+	unstage = reset HEAD
