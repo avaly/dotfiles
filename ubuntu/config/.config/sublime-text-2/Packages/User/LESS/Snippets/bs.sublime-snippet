@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[.box-shadow(${1:0} ${2:0} ${3:0px} ${4:rgba(0, 0, 0, .${5:5})});]]></content>
-	<tabTrigger>bs</tabTrigger>
-	<description>LESS</description>
-	<scope>source.css.less</scope>
-</snippet>

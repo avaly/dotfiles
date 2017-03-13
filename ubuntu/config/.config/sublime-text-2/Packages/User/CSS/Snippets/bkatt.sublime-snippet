@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[background-attachment: ${1:fixed};$0]]></content>
-	<tabTrigger>bkatt</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

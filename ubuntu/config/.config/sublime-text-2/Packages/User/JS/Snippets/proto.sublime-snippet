@@ -1,9 +1,0 @@
-<snippet>
-    <content><![CDATA[${1:class}.prototype.${2:method} = function () {
-	${0:// body...}
-};
-]]></content>
-    <tabTrigger>proto</tabTrigger>
-    <scope>source.js</scope>
-    <description>Prototype</description>
-</snippet>

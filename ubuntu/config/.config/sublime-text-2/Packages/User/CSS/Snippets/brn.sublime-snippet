@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[border-radius: 0;$0]]></content>
-	<tabTrigger>brn</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

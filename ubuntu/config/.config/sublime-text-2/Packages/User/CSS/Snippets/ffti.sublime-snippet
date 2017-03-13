@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[font-family: Times, 'Times New Roman', serif;$0]]></content>
-	<tabTrigger>ffti</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

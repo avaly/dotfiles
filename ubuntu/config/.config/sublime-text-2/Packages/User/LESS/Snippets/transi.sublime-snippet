@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[.transition(${1:all} ${2:.3s} ${3:ease});]]></content>
-	<tabTrigger>transi</tabTrigger>
-	<description>LESS</description>
-	<scope>source.css.less</scope>
-</snippet>

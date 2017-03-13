@@ -1,8 +1,0 @@
-<snippet>
-    <content><![CDATA[${1:method}: function(${2:arguments}) {
-	$0
-}${3:,}]]></content>
-    <tabTrigger>fno</tabTrigger>
-    <scope>source.js</scope>
-    <description>…: function() {…}</description>
-</snippet>

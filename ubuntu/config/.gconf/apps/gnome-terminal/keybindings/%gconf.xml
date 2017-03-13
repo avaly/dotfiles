@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="toggle_menubar" mtime="1390407151" type="string">
-		<stringvalue>F12</stringvalue>
-	</entry>
-	<entry name="paste" mtime="1390407124" type="string">
-		<stringvalue>&lt;Primary&gt;v</stringvalue>
-	</entry>
-</gconf>

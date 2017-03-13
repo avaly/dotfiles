@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[.box-shadow(none);]]></content>
-	<tabTrigger>bsn</tabTrigger>
-	<description>LESS</description>
-	<scope>source.css.less</scope>
-</snippet>

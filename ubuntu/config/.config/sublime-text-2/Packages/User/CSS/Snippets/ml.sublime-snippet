@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[margin-left: $1;$0]]></content>
-	<tabTrigger>ml</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

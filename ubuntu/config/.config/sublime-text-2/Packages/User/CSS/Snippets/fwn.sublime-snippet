@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[font-weight: normal;$0]]></content>
-	<tabTrigger>fwn</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

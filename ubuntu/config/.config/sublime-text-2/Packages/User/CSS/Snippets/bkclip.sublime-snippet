@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[-moz-background-clip: ${1:padding-box};
-background-clip:      $1;$0]]></content>
-	<tabTrigger>bkclip</tabTrigger>
-	<scope>source.css</scope>
-</snippet>

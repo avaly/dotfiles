@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[border-bottom: ${1:dotted} 1px #$2;$0]]></content>
-	<tabTrigger>bbd</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

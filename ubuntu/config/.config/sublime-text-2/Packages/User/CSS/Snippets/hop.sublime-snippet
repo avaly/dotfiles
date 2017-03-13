@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
-	$1
-}$0]]></content>
-	<tabTrigger>hop</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

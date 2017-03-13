@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[background: url(/images/$1) ${2:no-}repeat ${3:0} ${4:0};$0]]></content>
-	<tabTrigger>back</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

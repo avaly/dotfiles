@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[overflow-x: $1;$0]]></content>
-	<tabTrigger>ovx</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

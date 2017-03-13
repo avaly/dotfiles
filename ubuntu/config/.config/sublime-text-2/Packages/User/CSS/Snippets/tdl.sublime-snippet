@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[text-decoration: line-through;$0]]></content>
-	<tabTrigger>tdl</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

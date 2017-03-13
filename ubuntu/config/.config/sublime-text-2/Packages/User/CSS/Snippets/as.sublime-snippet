@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[$1 a:link span, $1 a:visited span {
-	$0
-}]]></content>
-	<tabTrigger>as</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

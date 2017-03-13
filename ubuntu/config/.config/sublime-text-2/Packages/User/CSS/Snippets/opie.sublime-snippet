@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[filter: alpha(opacity=${1:50});$0]]></content>
-	<tabTrigger>opie</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

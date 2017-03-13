@@ -1,5 +1,0 @@
-<snippet>
-	<content><![CDATA[line-height: $1;$0]]></content>
-	<tabTrigger>lh</tabTrigger>
-	<scope>source.css, source.less, source.sass, source.ecss</scope>
-</snippet>

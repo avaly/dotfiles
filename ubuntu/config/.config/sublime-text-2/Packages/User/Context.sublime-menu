@@ -1,4 +1,0 @@
-[
-	{ "command": "google_it", "caption": "Google Selection" },
-	{ "command": "open_include", "caption": "Open File at Cursor" }
-]

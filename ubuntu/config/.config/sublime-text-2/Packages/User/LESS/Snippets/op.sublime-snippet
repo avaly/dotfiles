@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[.opacity(${1:.5});]]></content>
-	<tabTrigger>op</tabTrigger>
-	<description>LESS</description>
-	<scope>source.css.less</scope>
-</snippet>
