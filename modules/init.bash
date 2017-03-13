@@ -9,3 +9,6 @@ if [[ $(iwgetid -r) == "avaly" ]]; then
 	fi
 fi
 
+# z
+source ~/apps/z/z.sh
+

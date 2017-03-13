@@ -43,6 +43,10 @@ if [[ $? -ne 0 ]]; then
 	sudo make install
 fi
 
+# z
+mkdir ~/apps
+git clone --depth 1 git@github.com:rupa/z.git ~/apps/z
+
 # vim
 ln -s -f ~/.dotfiles/.vimrc ~/.vimrc
 mkdir ~/.vim 2> /dev/null

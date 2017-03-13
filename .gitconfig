@@ -74,11 +74,10 @@
 	a = add
 	ad = add
 	ap = add -p
-	amend = commit --amend
-	ammend = commit --amend
-	amedn = commit --amend
-	am = commit --amend
+	amend = commit --amend --no-edit
+	amedn = commit --amend --no-edit
 	amends = commit --amend --no-verify
+	ammend = commit --amend
 	ams = commit --amend --no-verify
 	co = checkout
 	checout = checkout
