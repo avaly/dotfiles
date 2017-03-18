@@ -58,7 +58,7 @@ alias hosts="cat /etc/hosts"
 alias hoste="sudo vim /etc/hosts"
 alias sniff="sudo ngrep -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-alias traffic="sudo jnettop -i eth0"
+alias traffic="sudo jnettop -i wlan0"
 
 # ssh
 alias sshe="vim ~/.ssh/config"
@@ -73,14 +73,18 @@ alias vu="vagrant up"
 alias vh="vagrant halt"
 alias vs="vagrant ssh"
 
+# docker
 alias dk="docker"
+alias dki="docker images"
+alias dkrmi="docker images -q -f dangling=true | xargs -r docker rmi"
 alias dkc="docker-compose"
 
 # apt
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
-alias apts="sudo aptitude search"
-alias aptsh="sudo aptitude show"
+alias apts="sudo apt-cache search"
+alias aptsh="sudo apt-cache show"
+alias aptar="sudo apt-get autoremove"
 alias aptup="sudo apt-get update"
 alias aptug="sduo apt-get upgrade"
 
