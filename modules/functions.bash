@@ -36,7 +36,7 @@ ff()
 
 t()
 {
-    tail -f $1 | perl -pe "s/$2/${CLR_PURPLE_L}$&${CLR_NONE}/g"
+    tail -f $1 | perl -pe "s/$2/${BrightRed}$&${ResetColor}/g"
 }
 
 # Handy extract function

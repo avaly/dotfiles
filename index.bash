@@ -13,6 +13,7 @@ MODULES=(
 	'aliases.bash'
 	'setup.bash'
 	'functions.bash'
+	'colors.bash'
 	'prompt.bash'
 	'git-completion.bash'
 	'init.bash'
