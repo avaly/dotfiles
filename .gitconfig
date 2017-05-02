@@ -40,6 +40,8 @@
 	autosetuprebase = always
 
 [merge]
+	conflictstyle = diff3
+	ff = only
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
@@ -49,26 +51,36 @@
 [pull]
 	rebase = true
 
+[push]
+	default = simple
+	followTags = true
+
 [log]
 	date = iso
 
 [status]
+	showUntrackedFiles = all
 	submodulesummary = true
 
 [diff]
-	renames = copies		# Detect copies as well as renames.
+	# Detect copies as well as renames.
+	renames = copies
 	submodule = log
+  tool = icdiff
+
+# https://blog.scottnonnenberg.com/better-git-configuration/
+# git difftool master branch
+[difftool]
+  prompt = false
+
+[difftool "icdiff"]
+  cmd = ~/.local/bin/icdiff --line-numbers $LOCAL $REMOTE
+
+[pager]
+	difftool = true
 
 [grep]
 	lineNumber = true
-
-# URL shorthands
-[url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-	insteadOf = "github:"
 
 [alias]
 	a = add
@@ -100,16 +112,17 @@
 	fix = commit --fixup
 	flog = log --follow -p --
 	grp = grep --heading --line-number
-	l = log -n 50 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ls = log -n 10 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	lgs = log -n 30 --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)' --abbrev-commit --date=relative
-	lg = !"git l"
+	l = log -n 10 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s %Cgreen(%cr)%C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log -n 50 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)%C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgm = log -n 30 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)' --abbrev-commit --date=relative
+	ls = !"git l"
 	last = log -n 1
 	mrg = merge --ff-only
 	ms = checkout master
 	nb = checkout -b
 	pl = pull --ff-only --rebase origin
 	pls = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
+	prune = fetch --prune
 	ps = push origin HEAD
 	prod = checkout production
 	reset = checkout --
