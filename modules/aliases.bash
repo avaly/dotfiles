@@ -44,6 +44,7 @@ alias rm="rm -I"
 alias mv="mv -v"
 
 alias grep="grep -i --color=auto"
+alias f="tail -f"
 
 # utils
 alias ips="ifconfig -a | grep -o 'inet addr:\(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet addr://'"
@@ -78,6 +79,7 @@ alias dk="docker"
 alias dki="docker images"
 alias dkrmi="docker images -q -f dangling=true | xargs -r docker rmi"
 alias dkc="docker-compose"
+alias dkip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
 # apt
 alias apti="sudo apt-get install"
