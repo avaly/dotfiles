@@ -47,6 +47,7 @@ alias grep="grep -i --color=auto"
 alias f="tail -f"
 
 # utils
+alias mk="make"
 alias ips="ifconfig -a | grep -o 'inet addr:\(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet addr://'"
 alias big="du -ks * | sort -n"
 alias listen="sudo netstat -ntlp"

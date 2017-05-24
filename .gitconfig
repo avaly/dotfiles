@@ -8,6 +8,9 @@
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab
 	pager = less -R -S -X -x4 # 4-spaces tabs
 
+[help]
+	autoCorrect = -1
+
 [color]
 	branch = auto
 	diff = auto
