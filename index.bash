@@ -25,7 +25,8 @@ function load_modules {
 		[ -f $1/$MODULE ] && source $1/$MODULE
 	done
 
-	if [[ ! -z "$BASH_NONLOGIN" ]]; then
+	# Text only sessions, but not SSH sessions
+	if [[ ! -z "$BASH_NONLOGIN" || $(tty) == "$SSH_TTY" ]]; then
 		for MODULE in ${NONLOGIN_MODULES[@]}; do
 			[ -f $1/$MODULE ] && source $1/$MODULE
 		done
