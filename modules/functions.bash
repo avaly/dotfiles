@@ -73,6 +73,10 @@ dks()
 	docker stop -t 1 $(docker ps -aq)
 }
 
+function dkrm() {
+	docker ps --filter "status=exited" | grep "$1" | awk '{print $1}' | xargs --no-run-if-empty docker rm
+}
+
 clean-boot()
 {
 	local KERNEL_VERSION=$(uname -r | sed -r 's/-[a-z]+//')
