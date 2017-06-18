@@ -23,6 +23,7 @@ alias yar="yarn"
 alias ya="yarn"
 alias yn="yarn"
 alias yarn-refresh="rm yarn.lock && yarn && git add yarn.lock"
+alias yarn-upg="yarn upgrade-interactive"
 
 # fs
 alias ..="cd .."

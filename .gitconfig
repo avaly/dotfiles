@@ -5,7 +5,7 @@
 [core]
 	autocrlf = false
 	filemode = true
-	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	whitespace = trailing-space,space-before-tab
 	pager = less -R -S -X -x4 # 4-spaces tabs
 
 [help]
@@ -113,9 +113,9 @@
 	fix = commit --fixup
 	flog = log --follow -p --
 	grp = grep --heading --line-number
-	l = log -n 10 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s %Cgreen(%cr)%C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	lg = log -n 50 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)%C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	lgm = log -n 30 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)' --abbrev-commit --date=relative
+	l = !"git --no-pager log -n 10 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s %Cgreen(%cr)%C(blue)<%an>%Creset' --abbrev-commit --date=relative"
+	lg = log --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)%C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgm = !"git --no-pager log -n 30 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)' --abbrev-commit --date=relative"
 	ls = !"git l"
 	last = log -n 1
 	mrg = merge --ff-only
