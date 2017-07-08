@@ -126,6 +126,7 @@
 	prune = fetch --prune
 	ps = push origin HEAD
 	prod = checkout production
+	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\"
 	reset = checkout --
 	rs = checkout --
 	rbc = rebase --continue

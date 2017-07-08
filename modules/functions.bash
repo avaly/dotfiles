@@ -77,6 +77,10 @@ function dkrm() {
 	docker ps --filter "status=exited" | grep "$1" | awk '{print $1}' | xargs --no-run-if-empty docker rm
 }
 
+function minikube-docker() {
+	eval $(minikube docker-env)
+}
+
 clean-boot()
 {
 	local KERNEL_VERSION=$(uname -r | sed -r 's/-[a-z]+//')

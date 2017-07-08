@@ -83,6 +83,9 @@ alias dkrmi="docker images -q -f dangling=true | xargs -r docker rmi"
 alias dkc="docker-compose"
 alias dkip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
+# kubernetes
+alias kb="kubectl"
+
 # apt
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
