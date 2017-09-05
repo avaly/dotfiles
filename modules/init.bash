@@ -1,6 +1,6 @@
 # Mount external drives
 
-if [[ $(iwgetid -r) == "avaly" ]]; then
+if [[ $(iwgetid -r) == "boobies5" ]]; then
 	$(sudo mount -l | grep /media/nas > /dev/null 2>&1)
 	NAS_MOUNTED=$?
 

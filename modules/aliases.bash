@@ -17,12 +17,13 @@ alias hdiff="hg diff"
 alias hdif="hg diff"
 
 # node
-alias gr="grunt"
 alias nr="npm run"
 alias yar="yarn"
 alias ya="yarn"
 alias yn="yarn"
-alias yarn-refresh="rm yarn.lock && yarn && git add yarn.lock"
+alias yt="yarn test --"
+alias yw="yarn test -- --watch"
+alias yarn-refresh="git checkout HEAD~1 yarn.lock && yarn && git add yarn.lock"
 alias yarn-upg="yarn upgrade-interactive"
 
 # fs
@@ -55,6 +56,7 @@ alias listen="sudo netstat -ntlp"
 alias conns="netstat -ntap | grep ESTABLISHED"
 alias cmds="cut -f1 -d' ' ~/.bash_history | sort | uniq -c | sort -nr | head -n 30"
 alias memcache-clear="echo 'flush_all' | nc localhost 11211"
+alias envs="source ./.secrets/export.sh"
 
 # http
 alias hosts="cat /etc/hosts"
@@ -68,6 +70,7 @@ alias sshe="vim ~/.ssh/config"
 
 # services
 alias service="sudo service"
+alias service-logs="sudo journalctl -u"
 
 alias nginx-re="service nginx restart"
 alias apache-re="service apache2 restart"
@@ -89,7 +92,7 @@ alias kb="kubectl"
 # apt
 alias apti="sudo apt-get install"
 alias aptr="sudo apt-get remove"
-alias apts="sudo apt-cache search"
+alias apts="sudo aptitude search"
 alias aptsh="sudo apt-cache show"
 alias aptar="sudo apt-get autoremove"
 alias aptup="sudo apt-get update"
