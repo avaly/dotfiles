@@ -24,7 +24,7 @@ alias yn="yarn"
 alias yt="yarn test --"
 alias yw="yarn test -- --watch"
 alias yarn-refresh="git checkout HEAD~1 yarn.lock && yarn && git add yarn.lock"
-alias yarn-upg="yarn upgrade-interactive"
+alias yarn-up="yarn upgrade-interactive --latest"
 
 # fs
 alias ..="cd .."
