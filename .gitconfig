@@ -125,6 +125,7 @@
 	pls = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
 	prune = fetch --prune
 	ps = push origin HEAD
+	psf = push -f origin HEAD
 	prod = checkout production
 	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\"
 	reset = checkout --
