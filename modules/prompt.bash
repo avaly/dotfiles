@@ -141,8 +141,9 @@ custom_prompt() {
   local PSUSER="${BrightBlue}\u${ResetColor}"
   local PSDIR="${Green}\w${ResetColor}"
   local PSGIT="\$(_prompt_git_status)"
+  local PSK8="\$(kube_ps1)"
 
-  export PS1="\n${PSTIME}${PSHOST} ${PSUSER} in ${PSDIR}${PSGIT}\n\\$ "
+  export PS1="\n${PSTIME}${PSHOST} ${PSUSER} in ${PSDIR}${PSGIT} ${PSK8}\n\\$ "
 }
 
 custom_prompt

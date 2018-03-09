@@ -16,6 +16,7 @@ function load_modules {
 	# Terminal session inside X
 	NONLOGIN_MODULES=(
 		'colors.bash'
+		'kubernetes.bash'
 		'prompt.bash'
 		'git-completion.bash'
 		'init.bash'
