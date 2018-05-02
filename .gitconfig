@@ -106,6 +106,7 @@
 	cmsa = commit --no-verify -a -m
 	cp = cherry-pick
 	d = diff --color-words
+	dev = checkout develop
 	df = diff
 	dl = diff HEAD^
 	fhist = log --follow -p --
@@ -132,8 +133,11 @@
 	reset = checkout --
 	rs = checkout --
 	rbc = rebase --continue
-	rbi = rebase --interactive --autosquash master
+	rbi = rebase --interactive
+	rbim = rebase --interactive --autosquash master
+	rbid = rebase --interactive --autosquash develop
 	rbms = rebase master
+	rbdv = rebase develop
 	s = status -s
 	sa = stash apply
 	sd = stash drop
