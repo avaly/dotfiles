@@ -1,6 +1,6 @@
 # Mount external drives
 
-if [[ $(iwgetid -r) == "boobies5" ]]; then
+if [[ $(iwgetid -r) == "$WIFI_LAN_ID" ]]; then
 	$(sudo mount -l | grep /media/nas > /dev/null 2>&1)
 	NAS_MOUNTED=$?
 
@@ -11,4 +11,3 @@ fi
 
 # z
 source ~/apps/z/z.sh
-

@@ -34,14 +34,14 @@ function load_modules {
 	fi
 }
 
-# Default modules
-MODULE_DIR=~/.dotfiles/modules
-
-load_modules $MODULE_DIR
-
 # Local modules
 MODULE_DIR=~/.dotfiles.local
 
 if [[ -d $MODULE_DIR ]]; then
 	load_modules $MODULE_DIR
 fi
+
+# Default modules
+MODULE_DIR=~/.dotfiles/modules
+
+load_modules $MODULE_DIR
