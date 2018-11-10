@@ -1,20 +1,20 @@
 # Create a new directory and enter it
-mkd()
+function mkd()
 {
     mkdir -p $1 && cd $1
 }
 
-process()
+function process()
 {
 	ps -ef | grep $1
 }
 
-psgrep()
+function psgrep()
 {
 	ps aux | grep $1 | grep -v grep
 }
 
-pskill()
+function pskill()
 {
 	local pid
 
@@ -24,23 +24,23 @@ pskill()
 	echo "slaughtered."
 }
 
-files()
+function files()
 {
 	find $1 -type f -print
 }
 
-ff()
+function ff()
 {
 	find . -name $1 -print
 }
 
-t()
+function t()
 {
     tail -f $1 | perl -pe "s/$2/${BrightRed}$&${ResetColor}/g"
 }
 
 # Handy extract function
-extract()
+function extract()
 {
      if [ -f $1 ] ; then
          case $1 in
@@ -63,12 +63,12 @@ extract()
 }
 
 # Full dig info
-digg()
+function digg()
 {
     dig +nocmd $1 any +multiline +noall +answer
 }
 
-dks()
+function dks()
 {
 	docker stop -t 1 $(docker ps -aq)
 }
@@ -81,7 +81,7 @@ function minikube-docker() {
 	eval $(minikube docker-env)
 }
 
-clean-boot()
+function clean-boot()
 {
 	local KERNEL_VERSION=$(uname -r | sed -r 's/-[a-z]+//')
 	local OLD_KERNEL_VERSIONS=$(dpkg -l linux-{image,headers}-"[0-9]*" | awk '/ii/{print $2}' | grep -ve "$KERNEL_VERSION")

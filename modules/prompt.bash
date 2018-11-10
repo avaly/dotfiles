@@ -5,15 +5,26 @@
 # - liquidprompt
 # - https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 
+# Escape the given strings
+# Must be used for all strings injected in PS1 that may comes from remote sources,
+# like $PWD, VCS branch names...
+function _lp_escape() {
+    echo -nE "${1//\\/\\\\}"
+}
+
 function _prompt_git_branch() {
-  local branch="$(git symbolic-ref HEAD 2>/dev/null)"
-  if [[ $? -ne 0 || -z "$branch" ]] ; then
-  # In detached head state, use describe instead
-  branch="$(git describe HEAD 2>/dev/null)"
+  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
+
+  local branch
+  # Recent versions of Git support the --short option for symbolic-ref, but
+  # not 1.7.9 (Ubuntu 12.04)
+  if branch="$(git symbolic-ref -q HEAD)"; then
+      _lp_escape "${branch#refs/heads/}"
+  else
+      # In detached head state, use commit instead
+      # No escape needed
+      git rev-parse --short -q HEAD
   fi
-  [[ $? -ne 0 || -z "$branch" ]] && return
-  branch="${branch#refs/heads/}"
-  echo $(printf "%q" "$branch")
 }
 
 function __git_read() {

@@ -52,6 +52,7 @@ alias f="tail -f"
 alias mk="make"
 alias ips="ifconfig -a | grep -o 'inet addr:\(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet addr://'"
 alias big="du -ks * | sort -n"
+alias dus="df -h | sort -r -k 5 -i"
 alias listen="sudo netstat -ntlp"
 alias conns="netstat -ntap | grep ESTABLISHED"
 alias cmds="cut -f1 -d' ' ~/.bash_history | sort | uniq -c | sort -nr | head -n 30"
@@ -74,10 +75,6 @@ alias service-logs="sudo journalctl -u"
 
 alias nginx-re="service nginx restart"
 alias apache-re="service apache2 restart"
-
-alias vu="vagrant up"
-alias vh="vagrant halt"
-alias vs="vagrant ssh"
 
 # docker
 alias dk="docker"
@@ -105,4 +102,3 @@ alias shutter-reset="rm ~/.shutter/session.xml"
 
 # repo
 alias dotfiles-pull="cd ~/.dotfiles && git fetch origin && git reset --hard origin/master"
-
