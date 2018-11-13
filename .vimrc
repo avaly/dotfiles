@@ -76,3 +76,5 @@ endif
 map <F2> :NERDTreeToggle<CR>
 map <F3> :NERTTreeFind<CR>
 
+" Colors
+colorscheme peachpuff
