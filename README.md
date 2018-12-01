@@ -13,6 +13,12 @@ cd ~/.dotfiles
 
 Local overrides can be made in `~/.dotfiles.local`
 
+Uninstall:
+
+```
+./uninstall.sh
+```
+
 Credits:
 * [Krinkle dotfiles](https://github.com/Krinkle/dotfiles)
 * [Mathias Bynens dotfiles](https://github.com/mathiasbynens/dotfiles)

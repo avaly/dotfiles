@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #
 # Installs .dotfiles
 #
@@ -17,6 +16,9 @@ fi
 # Continue with the install
 
 echo "Installing .dotfiles..."
+
+cp -f ~/.bash_profile ~/.bash_profile.bak
+cp -f ~/.bashrc ~/.bashrc.bak
 
 echo "source ~/.dotfiles/index-login.bash" > ~/.bash_profile
 echo "source ~/.dotfiles/index-nonlogin.bash" > ~/.bashrc

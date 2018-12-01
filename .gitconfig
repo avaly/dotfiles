@@ -95,6 +95,7 @@
 	co = checkout
 	checout = checkout
 	both = diff HEAD
+	brc = !"git fetch -p; for branch in $(git branch -vv --no-color | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
 	brm = !"git branch --merged | grep -v \"\\*\" | grep -v \"^[^/]\\+$\" | xargs -n 1 git branch -d"
 	br = branch
 	cl = clone --recursive
@@ -148,5 +149,6 @@
 	sta = diff --cached --color-words
 	staged = diff --cached
 	undo = reset --soft HEAD^
+	undoit = !"git undo && git unstage . && git rs ."
 	unsta = reset HEAD
 	unstage = reset HEAD

@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+THIS_MODULES=~/.dotfiles/modules
+LOCAL_MODULES=~/.dotfiles.local
+
 function load_modules {
 	# Terminal session without X
 	SHARED_MODULES=(
@@ -34,14 +37,16 @@ function load_modules {
 	fi
 }
 
-# Local modules
-MODULE_DIR=~/.dotfiles.local
-
-if [[ -d $MODULE_DIR ]]; then
-	load_modules $MODULE_DIR
+# Configure from local modules
+if [[ -f $LOCAL_MODULES/configure.bash ]]; then
+	source $LOCAL_MODULES/configure.bash
 fi
 
 # Default modules
-MODULE_DIR=~/.dotfiles/modules
+load_modules $THIS_MODULES
 
-load_modules $MODULE_DIR
+# Local modules
+
+if [[ -d $LOCAL_MODULES ]]; then
+	load_modules $LOCAL_MODULES
+fi

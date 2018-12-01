@@ -1,0 +1,10 @@
+#!/bin/bash -i
+# Verify alias doesn't conflict with bash built-in
+
+alias > /tmp/alias.lst
+sed -i 's/=.*//; s/alias //g' /tmp/alias.lst
+
+while read -r line
+do
+   command type -a ${line}
+done< /tmp/alias.lst
