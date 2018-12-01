@@ -1,21 +1,17 @@
 # Create a new directory and enter it
-function mkd()
-{
+function mkd() {
     mkdir -p $1 && cd $1
 }
 
-function process()
-{
+function process() {
 	ps -ef | grep $1
 }
 
-function psgrep()
-{
+function psgrep() {
 	ps aux | grep $1 | grep -v grep
 }
 
-function pskill()
-{
+function pskill() {
 	local pid
 
 	pid=$(ps ax | grep $1 | grep -v grep | awk '{ print $1 }')
@@ -24,24 +20,20 @@ function pskill()
 	echo "slaughtered."
 }
 
-function files()
-{
+function files() {
 	find $1 -type f -print
 }
 
-function ff()
-{
+function ff() {
 	find . -name $1 -print
 }
 
-function t()
-{
+function t() {
     tail -f $1 | perl -pe "s/$2/${BrightRed}$&${ResetColor}/g"
 }
 
 # Handy extract function
-function extract()
-{
+function extract() {
      if [ -f $1 ] ; then
          case $1 in
              *.tar.bz2)   tar xvjf $1     ;;
@@ -63,13 +55,11 @@ function extract()
 }
 
 # Full dig info
-function digg()
-{
+function digg() {
     dig +nocmd $1 any +multiline +noall +answer
 }
 
-function dks()
-{
+function dks() {
 	docker stop -t 1 $(docker ps -aq)
 }
 
@@ -81,9 +71,12 @@ function minikube-docker() {
 	eval $(minikube docker-env)
 }
 
-function clean-boot()
-{
+function clean-boot() {
 	local KERNEL_VERSION=$(uname -r | sed -r 's/-[a-z]+//')
 	local OLD_KERNEL_VERSIONS=$(dpkg -l linux-{image,headers}-"[0-9]*" | awk '/ii/{print $2}' | grep -ve "$KERNEL_VERSION")
 	sudo apt-get purge $OLD_KERNEL_VERSIONS
+}
+
+function fsr() {
+  grep --line-buffered --color=never -r "" "$1" | fzf
 }

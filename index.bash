@@ -22,6 +22,7 @@ function load_modules {
 		'kubernetes.bash'
 		'prompt.bash'
 		'git-completion.bash'
+		'fzf.bash'
 		'init.bash'
 	)
 

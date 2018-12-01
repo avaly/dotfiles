@@ -45,9 +45,13 @@ if [[ $? -ne 0 ]]; then
 	sudo make install
 fi
 
-# z
 mkdir ~/apps
+
+# z
 git clone --depth 1 git@github.com:rupa/z.git ~/apps/z
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/fzf
 
 # vim
 ln -s -f ~/.dotfiles/.vimrc ~/.vimrc
