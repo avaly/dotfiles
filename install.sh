@@ -53,6 +53,10 @@ git clone --depth 1 git@github.com:rupa/z.git ~/apps/z
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/fzf
 
+# diff-so-fancy
+wget -O ~/bin/diff-so-fancy https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
+chmod +x ~/bin/diff-so-fancy
+
 # vim
 ln -s -f ~/.dotfiles/.vimrc ~/.vimrc
 mkdir ~/.vim 2> /dev/null

@@ -6,7 +6,7 @@
 	autocrlf = false
 	filemode = true
 	whitespace = trailing-space,space-before-tab
-	pager = less -R -S -X -x4 # 4-spaces tabs
+	pager = "diff-so-fancy | less --tabs=2 -RFX"
 
 [help]
 	autoCorrect = -1
@@ -25,12 +25,18 @@
 
 [color "diff"]
 	commit = yellow bold
+	frag = magenta bold
+	old = red bold
 	plain = normal
 	meta = yellow
-	frag = magenta
-	old = red bold
 	new = green bold
-	whitespace = black red
+	whitespace = red reverse
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
 
 [color "status"]
 	header = normal
@@ -77,7 +83,7 @@
   prompt = false
 
 [difftool "icdiff"]
-  cmd = ~/.local/bin/icdiff --line-numbers $LOCAL $REMOTE
+  cmd = icdiff --line-numbers $LOCAL $REMOTE
 
 [pager]
 	difftool = true
@@ -142,6 +148,7 @@
 	s = status -s
 	sa = stash apply
 	sd = stash drop
+	showw = difftool HEAD~1 HEAD
 	sl = stash list
 	ss = stash save
 	st = status
