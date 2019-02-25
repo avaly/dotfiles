@@ -24,10 +24,6 @@ function files() {
 	find $1 -type f -print
 }
 
-function ff() {
-	find . -name $1 -print
-}
-
 function t() {
     tail -f $1 | perl -pe "s/$2/${BrightRed}$&${ResetColor}/g"
 }

@@ -4,7 +4,7 @@ export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \
   \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' -o -name node_modules \\) -prune \
   -o -type d -print 2> /dev/null | cut -b3-"
 export FZF_COMPLETION_TRIGGER='~~'
-export FZF_DEFAULT_OPTS='--no-height --no-reverse'
+export FZF_DEFAULT_OPTS='--no-height --no-reverse --height 80%'
 
 # Setup fzf
 # ---------

@@ -85,6 +85,9 @@
 [difftool "icdiff"]
   cmd = icdiff --line-numbers $LOCAL $REMOTE
 
+[diff-so-fancy]
+	markEmptyLines = false
+
 [pager]
 	difftool = true
 

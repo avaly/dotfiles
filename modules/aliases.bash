@@ -58,6 +58,8 @@ alias conns="netstat -ntap | grep ESTABLISHED"
 alias cmds="cut -f1 -d' ' ~/.bash_history | sort | uniq -c | sort -nr | head -n 30"
 alias memcache-clear="echo 'flush_all' | nc localhost 11211"
 alias envs="source ./.secrets/export.sh"
+alias c="/bin/cat"
+alias ccat="/bin/cat"
 
 # http
 alias hosts="cat /etc/hosts"
@@ -82,6 +84,7 @@ alias dki="docker images"
 alias dkrmi="docker images -q -f dangling=true | xargs -r docker rmi"
 alias dkc="docker-compose"
 alias dkip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias dkdbg="docker run --rm -ti --entrypoint /bin/sh"
 
 # kubernetes
 alias kb="kubectl"
