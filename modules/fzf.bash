@@ -1,5 +1,7 @@
 # Configure
 # ---------
+export FZF_DEFAULT_COMMAND="fd --type file --hidden --color=always"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \
   \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' -o -name node_modules \\) -prune \
   -o -type d -print 2> /dev/null | cut -b3-"
