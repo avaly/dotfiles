@@ -83,6 +83,7 @@ alias dk="docker"
 alias dki="docker images"
 alias dkrmi="docker images -q -f dangling=true | xargs -r docker rmi"
 alias dkc="docker-compose"
+alias dkcc="docker-compose --compatibility"
 alias dkip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 alias dkdbg="docker run --rm -ti --entrypoint /bin/sh"
 

@@ -123,6 +123,10 @@
 	filehistory = log --follow -p --
 	files = show --pretty="" --name-only
 	fix = commit --fixup
+	fixh = commit --fixup HEAD
+	fix1 = commit --fixup HEAD~1
+	fix2 = commit --fixup HEAD~2
+	fix3 = commit --fixup HEAD~3
 	flog = log --follow -p --
 	grp = grep --heading --line-number
 	l = !"git --no-pager log -n 10 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s %Cgreen(%cr)%C(blue)<%an>%Creset' --abbrev-commit --date=relative"
