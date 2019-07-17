@@ -116,8 +116,7 @@ function _prompt_git_status() {
 
   local commits=0
   if [[ -n "$remote" && -n "$remote_branch" ]] ; then
-    commits=$(git rev-list --no-merges --count \
-      ${remote}/${remote_branch}..${branch} 2>/dev/null)
+    commits=$(git rev-list --no-merges --count ${remote}/${remote_branch}..${branch} 2>/dev/null)
     if [[ -z "$commits" ]] ; then
       commits=0
     fi
@@ -145,16 +144,24 @@ function _prompt_git_status() {
   echo -ne " on ${result}${ResetColor}"
 }
 
+_prompt_product() {
+  if [[ -z "$PRODUCT" ]]; then
+    return
+  fi
+
+  echo -ne " ${Cyan}${PRODUCT}${ResetColor}"
+}
 
 custom_prompt() {
   local PSTIME="${BrightBlack}[\$(date +%H:%M:%S)]${ResetColor} "
   local PSHOST="${Magenta}\h${ResetColor}"
   local PSUSER="${BrightBlue}\u${ResetColor}"
   local PSDIR="${Green}\w${ResetColor}"
+  local PSPRODUCT="\$(_prompt_product)"
   local PSGIT="\$(_prompt_git_status)"
   local PSK8="\$(kube_ps1)"
 
-  export PS1="\n${PSTIME}${PSHOST} ${PSUSER} in ${PSDIR}${PSGIT} ${PSK8}\n\\$ "
+  export PS1="\n${PSTIME}${PSHOST} ${PSUSER} in ${PSDIR}${PSPRODUCT}${PSGIT} ${PSK8}\n\\$ "
 }
 
 custom_prompt
