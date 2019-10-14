@@ -76,3 +76,18 @@ function clean-boot() {
 function fsr() {
   grep --line-buffered --color=never -r "" "$1" | fzf
 }
+
+# for yarn (yarn add with types)
+function yat() {
+  yarn add $1
+
+  if ! cat node_modules/$1/package.json | jq -e 'select((.types != null) or .typings != null)' > /dev/null;
+  then
+    if [[ $1 == @* ]]; then
+      TYPE_NAME=$(echo $1 | sed 's/^@//' | sed 's/\//__/')
+    else
+      TYPE_NAME=$1
+    fi
+    yarn add -D @types/$TYPE_NAME
+  fi
+}
