@@ -10,12 +10,6 @@ alias hoy="git"
 alias ga="git-aliases"
 alias gal="git-aliases"
 
-# mercurial
-alias h="hg"
-alias ham="hg amend"
-alias hdiff="hg diff"
-alias hdif="hg diff"
-
 # node
 alias nr="npm run"
 alias yar="yarn"
@@ -62,6 +56,9 @@ alias c="/bin/cat"
 alias ccat="/bin/cat"
 
 # http
+alias ht="http --print=hHbB"
+alias hth="http --print=hH"
+alias htb="http --print=bB"
 alias hosts="cat /etc/hosts"
 alias hoste="sudo vim /etc/hosts"
 alias sniff="sudo ngrep -t '^(GET|POST) ' 'tcp and port 80'"
