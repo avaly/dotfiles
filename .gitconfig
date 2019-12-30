@@ -6,7 +6,7 @@
 	autocrlf = false
 	filemode = true
 	whitespace = trailing-space,space-before-tab
-	pager = "diff-so-fancy | less --tabs=2 -RFX"
+	pager = "delta --dark --hunk-style plain --tabs 2"
 
 [help]
 	autoCorrect = -1
@@ -84,9 +84,6 @@
 
 [difftool "icdiff"]
   cmd = icdiff --line-numbers $LOCAL $REMOTE
-
-[diff-so-fancy]
-	markEmptyLines = false
 
 [pager]
 	difftool = true

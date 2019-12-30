@@ -67,6 +67,10 @@ function minikube-docker() {
 	eval $(minikube docker-env)
 }
 
+function kbns() {
+  kubectl config set-context $(kubectl config current-context) --namespace=$1
+}
+
 function clean-boot() {
 	local KERNEL_VERSION=$(uname -r | sed -r 's/-[a-z]+//')
 	local OLD_KERNEL_VERSIONS=$(dpkg -l linux-{image,headers}-"[0-9]*" | awk '/ii/{print $2}' | grep -ve "$KERNEL_VERSION")
