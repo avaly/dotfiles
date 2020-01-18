@@ -13,7 +13,7 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 
 # Make some commands not show up in history
-export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g st:g ls:g d:exit:date"
+export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g ap:g st:g l:g d:g ps:g psf:gpr:exit:date"
 
 
 

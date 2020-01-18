@@ -91,6 +91,10 @@
 [grep]
 	lineNumber = true
 
+# https://github.com/dandavison/delta/issues/40
+# [interactive]
+#   diffFilter = "delta --dark --file-style plain --hunk-style plain --tabs 2"
+
 [alias]
 	a = add
 	ad = add
@@ -112,7 +116,7 @@
 	cms = commit --no-verify -m
 	cmsa = commit --no-verify -a -m
 	cp = cherry-pick
-	d = diff --color-words
+	d = diff
 	dev = checkout develop
 	df = diff
 	dl = diff HEAD^
@@ -157,7 +161,7 @@
 	ss = stash save
 	st = status
 	su = submodule update --init --recursive
-	sta = diff --cached --color-words
+	sta = diff --cached
 	staged = diff --cached
 	undo = reset --soft HEAD^
 	undoit = !"git undo && git unstage . && git rs ."

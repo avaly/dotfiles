@@ -22,6 +22,7 @@ cp -f ~/.bashrc ~/.bashrc.bak
 
 echo "source ~/.dotfiles/index-login.bash" > ~/.bash_profile
 echo "source ~/.dotfiles/index-nonlogin.bash" > ~/.bashrc
+ln -s ~/.dotfiles/.inputrc ~/.inputrc
 
 mkdir ~/bin 2> /dev/null
 for FILE in ~/.dotfiles/bin/*
