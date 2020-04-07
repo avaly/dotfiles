@@ -102,12 +102,14 @@
 	amend = commit --amend --no-edit
 	amends = commit --amend --no-verify
 	ams = commit --amend --no-verify
+	authors = shortlog -sne
 	co = checkout
 	checout = checkout
 	both = diff HEAD
+	b = branch
+	br = branch
 	brc = !"git fetch -p; for branch in $(git branch -vv --no-color | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
 	brm = !"git branch --merged | grep -v \"\\*\" | grep -v \"^[^/]\\+$\" | xargs -n 1 git branch -d"
-	br = branch
 	cl = clone --recursive
 	cm = commit -m
 	cma = commit -a -m
@@ -139,11 +141,13 @@
 	ms = checkout master
 	nb = checkout -b
 	pl = pull --ff-only --rebase origin
+	plg = !"git pl && git l"
 	pls = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
 	prune = fetch --prune
 	ps = push origin HEAD
 	psf = push -f origin HEAD
 	prod = checkout production
+	rb = for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ --count=10
 	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\"
 	reset = checkout --
 	rs = checkout --
@@ -156,6 +160,7 @@
 	s = status -s
 	sa = stash apply
 	sd = stash drop
+	set-upstream = !"git branch --set-upstream-to=origin/$(git current-branch)"
 	showw = difftool HEAD~1 HEAD
 	sl = stash list
 	ss = stash save
