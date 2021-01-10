@@ -95,3 +95,22 @@ function yat() {
     yarn add -D @types/$TYPE_NAME
   fi
 }
+
+function npmdiff() {
+  http https://diff.intrinsic.com/$1/$2/$3.diff | bat -l diff
+}
+
+function emojis() {
+  printf $(printf '\\U%x\\x20' {{128512..128591},{128640..128725}})
+}
+
+# Output k8s events in chronolical view
+function k8s-events {
+  {
+    echo $'TIME\tTYPE\tREASON\tOBJECT\tSOURCE\tMESSAGE';
+    kubectl get events -o json "$@" \
+      | jq -r  '.items | map(. + {t: (.eventTime//.lastTimestamp)}) | sort_by(.t)[] | [.t, .type, .reason, .involvedObject.kind + "/" + .involvedObject.name, .source.component + "," + (.source.host//"-"), .message] | @tsv';
+  } \
+    | column -s $'\t' -t \
+    | less -S
+}

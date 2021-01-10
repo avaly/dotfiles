@@ -91,6 +91,8 @@ alias dkdbg="docker run --rm -ti --entrypoint /bin/sh"
 
 # kubernetes
 alias kb="kubectl"
+alias kx="kubectl config use-context"
+alias kxs="kubectl config get-contexts"
 
 # apt
 alias apti="sudo apt-get install"
