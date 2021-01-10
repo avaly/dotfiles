@@ -5,10 +5,11 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+THIS_COMPLETION=~/.dotfiles/completion
 THIS_MODULES=~/.dotfiles/modules
 LOCAL_MODULES=~/.dotfiles.local
 
-function load_modules {
+function load_modules() {
 	# Terminal session without X
 	SHARED_MODULES=(
 		'aliases.bash'
@@ -21,7 +22,6 @@ function load_modules {
 		'colors.bash'
 		'kubernetes.bash'
 		'prompt.bash'
-		'git-completion.bash'
 		'fzf.bash'
 		'init.bash'
 	)
@@ -38,6 +38,19 @@ function load_modules {
 	fi
 }
 
+function load_completion() {
+	COMPLETION_MODULES=(
+		'docker.bash'
+		'docker-compose.bash'
+		'git.bash'
+		'kubectl.bash'
+	)
+
+	for MODULE in ${COMPLETION_MODULES[@]}; do
+		[ -f $THIS_COMPLETION/$MODULE ] && source $THIS_COMPLETION/$MODULE
+	done
+}
+
 # Configure from local modules
 if [[ -f $LOCAL_MODULES/configure.bash ]]; then
 	source $LOCAL_MODULES/configure.bash
@@ -45,6 +58,7 @@ fi
 
 # Default modules
 load_modules $THIS_MODULES
+load_completion
 
 # Local modules
 
