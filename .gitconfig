@@ -4,6 +4,7 @@
 
 [core]
 	autocrlf = false
+	excludesfile = ~/.gitignore-global
 	filemode = true
 	whitespace = trailing-space,space-before-tab
 	pager = "delta --dark --hunk-style plain --tabs 2"
@@ -58,6 +59,7 @@
 	recurseSubmodules = on-demand
 
 [pull]
+	ff = only
 	rebase = true
 
 [push]
@@ -120,13 +122,16 @@
 	cp = cherry-pick
 	d = diff
 	dev = checkout develop
+	dr = !"git dev && git pl"
 	df = diff
 	dl = diff HEAD^
 	fhist = log --follow -p --
 	filehistory = log --follow -p --
 	files = show --pretty="" --name-only
-	fix = commit --fixup
+	fix = !"git commit --fixup $(git rev-list --reverse develop..HEAD | head -1)"
+	fixc = commit --fixup
 	fixh = commit --fixup HEAD
+	fixm = !"git commit --fixup $(git rev-list --reverse master..HEAD | head -1)"
 	fix1 = commit --fixup HEAD~1
 	fix2 = commit --fixup HEAD~2
 	fix3 = commit --fixup HEAD~3
@@ -137,12 +142,15 @@
 	lgm = !"git --no-pager log -n 30 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)' --abbrev-commit --date=relative"
 	ls = !"git l"
 	last = log -n 1
+	main = checkout main
+	mn = checkout main
 	mrg = merge --ff-only
 	ms = checkout master
 	nb = checkout -b
 	pl = pull --ff-only --rebase origin
 	plg = !"git pl && git l"
 	pls = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
+	po = !"git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
 	prune = fetch --prune
 	ps = push origin HEAD
 	psf = push -f origin HEAD
@@ -150,17 +158,18 @@
 	rb = for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ --count=10
 	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\"
 	reset = checkout --
+	reup = !"git fetch upstream master && git mrg upstream/master"
 	rs = checkout --
 	rbc = rebase --continue
 	rbi = rebase --interactive
 	rbim = rebase --interactive --autosquash master
 	rbid = rebase --interactive --autosquash develop
+	rbidd = !"git dr && git checkout - && git rbid"
 	rbms = rebase master
 	rbdv = rebase develop
 	s = status -s
 	sa = stash apply
 	sd = stash drop
-	set-upstream = !"git branch --set-upstream-to=origin/$(git current-branch)"
 	showw = difftool HEAD~1 HEAD
 	sl = stash list
 	ss = stash save
