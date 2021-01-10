@@ -25,7 +25,7 @@ export EDITOR="vim"
 #
 # Terminal
 #
-export PATH="$PATH:/usr/local/bin:./node_modules/.bin:./bin:$HOME/bin:$HOME/.local/bin:$HOME/.yarn/bin"
+export PATH="$PATH:/usr/local/bin:./node_modules/.bin:./bin:$HOME/bin:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/apps:$HOME/apps/git-fuzzy/bin"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob

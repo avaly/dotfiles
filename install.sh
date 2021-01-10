@@ -58,6 +58,10 @@ rm ./gh.deb
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/fzf
+~/apps/fzf/install --no-key-bindings --no-completion --no-update-rc
+
+# git-fuzzy
+git clone --depth 1 https://github.com/bigH/git-fuzzy.git ~/apps/git-fuzzy
 
 # delta
 wget -O ./delta.deb https://github.com/dandavison/delta/releases/download/0.0.15/git-delta-musl_0.0.15_amd64.deb

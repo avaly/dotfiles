@@ -12,7 +12,7 @@ fzf-down() {
   fzf --height 80% "$@" --border
 }
 
-gf() {
+function gfi() {
   is_in_git_repo || return
   git -c color.status=always status --short |
   fzf-down -m --ansi --nth 2..,.. \
@@ -54,6 +54,11 @@ gr() {
 gbr() {
   is_in_git_repo || return
   git branch -D $(gb)
+}
+
+gbs() {
+  is_in_git_repo || return
+  git checkout $(gb)
 }
 
 gcs() {
