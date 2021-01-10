@@ -106,7 +106,6 @@ alias aptug="sduo apt-get upgrade"
 # desktop
 alias update-fonts="sudo fc-cache -f -v"
 alias open="xdg-open"
-alias shutter-reset="rm ~/.shutter/session.xml"
 
 # repo
 alias dotfiles-pull="cd ~/.dotfiles && git fetch origin && git reset --hard origin/master"

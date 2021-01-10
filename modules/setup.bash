@@ -4,16 +4,17 @@
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL="ignoredups:ignorespace"
+export HISTTIMEFORMAT="%y-%m-%d %T "
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=100000
-export HISTFILESIZE=100000
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 
 # Make some commands not show up in history
-export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g ap:g st:g l:g d:g ps:g psf:gpr:exit:date"
+export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g ap:g st:g l:g d:g fix:g ps:g psf:gpr:exit:date"
 
 
 
