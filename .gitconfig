@@ -131,7 +131,8 @@
 	fix = !"git commit --fixup $(git rev-list --reverse develop..HEAD | head -1)"
 	fixc = commit --fixup
 	fixh = commit --fixup HEAD
-	fixm = !"git commit --fixup $(git rev-list --reverse master..HEAD | head -1)"
+	fixm = !"git commit --fixup $(git rev-list --reverse main..HEAD | head -1)"
+	fixms = !"git commit --fixup $(git rev-list --reverse master..HEAD | head -1)"
 	fix1 = commit --fixup HEAD~1
 	fix2 = commit --fixup HEAD~2
 	fix3 = commit --fixup HEAD~3
@@ -162,7 +163,8 @@
 	rs = checkout --
 	rbc = rebase --continue
 	rbi = rebase --interactive
-	rbim = rebase --interactive --autosquash master
+	rbim = rebase --interactive --autosquash main
+	rbims = rebase --interactive --autosquash master
 	rbid = rebase --interactive --autosquash develop
 	rbidd = !"git dr && git checkout - && git rbid"
 	rbms = rebase master
@@ -181,3 +183,8 @@
 	undoit = !"git undo && git unstage . && git rs ."
 	unsta = reset HEAD
 	unstage = reset HEAD
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
