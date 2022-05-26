@@ -106,7 +106,6 @@
 	ams = commit --amend --no-verify
 	authors = shortlog -sne
 	co = checkout
-	checout = checkout
 	both = diff HEAD
 	b = branch
 	br = branch
@@ -121,7 +120,7 @@
 	cmsa = commit --no-verify -a -m
 	cp = cherry-pick
 	d = diff
-	dev = checkout develop
+	dev = switch develop
 	dr = !"git dev && git pl"
 	df = diff
 	dl = diff HEAD^
@@ -143,11 +142,11 @@
 	lgm = !"git --no-pager log -n 30 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)' --abbrev-commit --date=relative"
 	ls = !"git l"
 	last = log -n 1
-	main = checkout main
-	mn = checkout main
+	m = switch main
+	main = switch main
 	mrg = merge --ff-only
-	ms = checkout master
-	nb = checkout -b
+	ms = switch master
+	nb = switch --create
 	pl = pull --ff-only --rebase origin
 	plg = !"git pl && git l"
 	pls = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
@@ -155,18 +154,20 @@
 	prune = fetch --prune
 	ps = push origin HEAD
 	psf = push -f origin HEAD
-	prod = checkout production
+	prod = switch production
 	rb = for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ --count=10
 	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\"
 	reset = checkout --
-	reup = !"git fetch upstream master && git mrg upstream/master"
+	reup = !"git fetch upstream main && git mrg upstream/main"
+	reupms = !"git fetch upstream master && git mrg upstream/master"
 	rs = checkout --
 	rbc = rebase --continue
 	rbi = rebase --interactive
 	rbim = rebase --interactive --autosquash main
+	rbimm = !"git main && git pl && git switch - && git rbim"
 	rbims = rebase --interactive --autosquash master
 	rbid = rebase --interactive --autosquash develop
-	rbidd = !"git dr && git checkout - && git rbid"
+	rbidd = !"git dr && git switch - && git rbid"
 	rbms = rebase master
 	rbdv = rebase develop
 	s = status -s
@@ -179,6 +180,7 @@
 	su = submodule update --init --recursive
 	sta = diff --cached
 	staged = diff --cached
+	sw = switch
 	undo = reset --soft HEAD^
 	undoit = !"git undo && git unstage . && git rs ."
 	unsta = reset HEAD
