@@ -104,7 +104,6 @@
 	amend = commit --amend --no-edit
 	amends = commit --amend --no-verify
 	ams = commit --amend --no-verify
-	authors = shortlog -sne
 	co = checkout
 	both = diff HEAD
 	b = branch
@@ -118,7 +117,6 @@
 	cmma = commit -a
 	cms = commit --no-verify -m
 	cmsa = commit --no-verify -a -m
-	cp = cherry-pick
 	d = diff
 	dev = switch develop
 	dr = !"git dev && git pl"
@@ -147,6 +145,7 @@
 	mrg = merge --ff-only
 	ms = switch master
 	nb = switch --create
+	pick = cherry-pick
 	pl = pull --ff-only --rebase origin
 	plg = !"git pl && git l"
 	pls = !"git pull --ff-only --rebase origin; git submodule sync --recursive; git su;"
@@ -185,6 +184,7 @@
 	undoit = !"git undo && git unstage . && git rs ."
 	unsta = reset HEAD
 	unstage = reset HEAD
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true

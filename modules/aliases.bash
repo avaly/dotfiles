@@ -17,15 +17,21 @@ alias gal="git-aliases"
 
 # node
 alias nr="npm run"
+alias np="pnpm"
+alias pn="pnpm"
+alias pi="pnpm install --no-optional"
 alias yar="yarn"
 alias ya="yarn"
 alias yn="yarn"
 alias mt="make test"
 alias yt="yarn test"
+alias pt="pnpm test"
 alias mti="make test-integration"
 alias yti="yarn test:integration"
+alias pti="pnpm test:integration"
 alias mw="make test -- --watch"
 alias yw="yarn test --watch"
+alias pw="pnpm test --watch"
 alias yarn-up="yarn upgrade-interactive --latest"
 
 # fs
@@ -85,6 +91,7 @@ alias apache-re="service apache2 restart"
 
 # docker
 alias dk="docker"
+alias dx="docker buildx"
 alias dki="docker images"
 alias dkrmi="docker images -q -f dangling=true | xargs -r docker rmi"
 alias dkc="docker-compose"

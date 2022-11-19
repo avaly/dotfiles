@@ -52,7 +52,7 @@ mkdir ~/apps
 git clone --depth 1 git@github.com:rupa/z.git ~/apps/z
 
 # git cli
-wget -O gh.deb https://github.com/cli/cli/releases/download/v1.4.0/gh_1.4.0_linux_amd64.deb
+wget -O gh.deb https://github.com/cli/cli/releases/download/v2.15.0/gh_2.15.0_linux_amd64.deb
 sudo dpkg -i ./gh.deb
 rm ./gh.deb
 

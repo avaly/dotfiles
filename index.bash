@@ -40,10 +40,8 @@ function load_modules() {
 
 function load_completion() {
 	COMPLETION_MODULES=(
-		'docker.bash'
-		'docker-compose.bash'
+		'aliases.bash'
 		'git.bash'
-		'kubectl.bash'
 	)
 
 	for MODULE in ${COMPLETION_MODULES[@]}; do

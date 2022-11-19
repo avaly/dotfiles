@@ -44,14 +44,12 @@ shopt -s autocd 2> /dev/null
 # * Recursive globbing, e.g. `echo **/*.txt`
 shopt -s globstar 2> /dev/null
 
-
 # Use custom less colors for man pages
 # (http://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_1.html)
 export LESS_TERMCAP_md=$'\E[1;32m' # begin bold mode
 export LESS_TERMCAP_me=$'\E[0m' # end bold mode
 
-
 # enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-	. /etc/bash_completion
+	source /etc/bash_completion
 fi
