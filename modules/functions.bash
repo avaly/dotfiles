@@ -114,3 +114,7 @@ function k8s-events {
     | column -s $'\t' -t \
     | less -S
 }
+
+function dkup() {
+  docker compose up --attach $1 $1
+}
