@@ -135,10 +135,9 @@
 	fix3 = commit --fixup HEAD~3
 	flog = log --follow -p --
 	grp = grep --heading --line-number
-	l = !"git --no-pager log -n 10 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s %Cgreen(%cr)%C(blue)<%an>%Creset' --abbrev-commit --date=relative"
-	lg = log --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)%C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	lgm = !"git --no-pager log -n 30 --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s (%Cgreen%cr %Cred%ar%Creset)' --abbrev-commit --date=relative"
-	ls = !"git l"
+	l = !"git --no-pager lg -n 10"
+	lg = log --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgm = !"git lg --author='Valentin Agachi'"
 	last = log -n 1
 	m = switch main
 	main = switch main
