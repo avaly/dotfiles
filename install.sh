@@ -64,7 +64,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/fzf
 git clone --depth 1 https://github.com/bigH/git-fuzzy.git ~/apps/git-fuzzy
 
 # delta
-wget -O ./delta.deb https://github.com/dandavison/delta/releases/download/0.0.15/git-delta-musl_0.0.15_amd64.deb
+wget -O ./delta.deb https://github.com/dandavison/delta/releases/download/0.18.2/git-delta-musl_0.18.2_amd64.deb
 sudo dpkg -i ./delta.deb
 rm ./delta.deb
 

@@ -7,7 +7,7 @@
 	excludesfile = ~/.gitignore-global
 	filemode = true
 	whitespace = trailing-space,space-before-tab,tabwidth=2
-	pager = "delta --dark --hunk-style plain --tabs 2"
+	pager = delta
 
 [help]
 	autoCorrect = -1
@@ -74,28 +74,48 @@
 	submodulesummary = true
 
 [diff]
+	# https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---color-movedltmodegt
+	colorMoved = default
 	# Detect copies as well as renames.
 	renames = copies
 	submodule = log
-  tool = icdiff
-
-# https://blog.scottnonnenberg.com/better-git-configuration/
-# git difftool master branch
-[difftool]
-  prompt = false
-
-[difftool "icdiff"]
-  cmd = icdiff --line-numbers $LOCAL $REMOTE
-
-[pager]
-	difftool = true
 
 [grep]
 	lineNumber = true
 
-# https://github.com/dandavison/delta/issues/40
-# [interactive]
-#   diffFilter = "delta --dark --file-style plain --hunk-style plain --tabs 2"
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+
+[delta]
+	dark = true
+	features = diff
+	hyperlinks = true
+	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+	# Use n and N to move between diff sections.
+	# https://dandavison.github.io/delta/navigation-keybindings-for-large-diffs.html
+	navigate = true
+	side-by-side = true
+	# delta --show-syntax-themes --dark
+	syntax-theme = TwoDark
+	tabs = 2
+	true-color = always
+
+[delta "interactive"]
+	keep-plus-minus-markers = false
+
+[delta "diff"]
+	blame-format = "{author:<18} ({commit:>8}) {timestamp:>16}"
+	blame-palette = "#101010 #200020 #002800 #000028 #202000 #280000 #002020 #002800 #202020"
+	commit-decoration-style = blue box ul
+	commit-style = raw
+	file-style = omit
+	hunk-header-decoration-style = "#113355" box ul
+	hunk-header-file-style = bold cyan
+	hunk-header-line-number-style = yellow
+	hunk-header-style = file line-number
+	line-numbers-left-style = "#113355"
+	line-numbers-right-style = "#113355"
+	line-numbers-zero-style = "#555555"
 
 [alias]
 	a = add
