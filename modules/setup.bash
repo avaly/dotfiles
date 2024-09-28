@@ -2,21 +2,22 @@
 # Bash History
 #
 
-# don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL="ignoredups:ignorespace"
-export HISTTIMEFORMAT="%y-%m-%d %T "
-
+# http://mywiki.wooledge.org/BashFAQ/088
 # append to the history file, don't overwrite it
 shopt -s histappend
+export PROMPT_COMMAND="history -a"
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=1000000
-export HISTFILESIZE=1000000
+# See `man bash` for more details:
+# don't put duplicate lines in the history.
+export HISTCONTROL="ignoredups:ignorespace"
+export HISTTIMEFORMAT="%y-%m-%d %T "
+# Numeric values less than zero result in every command being saved on the history list (there is no limit).
+export HISTSIZE=-1
+# Non-numeric values and numeric values less than zero inhibit truncation.
+export HISTFILESIZE=-1
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g ap:g st:g l:g d:g fix:g fixm:g fixms:g ps:g psf:gpr:exit:date"
-
-
 
 #
 # Editor
