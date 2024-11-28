@@ -186,6 +186,7 @@
 	rbims = rebase --interactive --autosquash master
 	rbid = rebase --interactive --autosquash develop
 	rbidd = !"git dr && git switch - && git rbid"
+	rbiss = !"git co staging && git pl && git switch - && git rebase --interactive --autosquash staging"
 	rbms = rebase master
 	rbdv = rebase develop
 	s = status -s

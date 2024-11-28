@@ -4,11 +4,11 @@
 # GIT heart FZF
 # -------------
 
-is_in_git_repo() {
+function is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
-fzf-down() {
+function fzf-down() {
   fzf --height 80% "$@" --border
 }
 
@@ -20,30 +20,30 @@ function gfi() {
   cut -c4- | sed 's/.* -> //'
 }
 
-gb() {
+function gb() {
   is_in_git_repo || return
   git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ |
   fzf-down --ansi --multi --preview-window "right:70%" \
-    --preview 'git l --color=always $(echo {} | cut -d" " -f1) | head -'$LINES
+    --preview 'git lg --color=always $(echo {} | cut -d" " -f1) | head -'$LINES
 }
 
-gt() {
+function gt() {
   is_in_git_repo || return
   git tag --sort -version:refname |
   fzf-down --multi --preview-window "right:70%" \
     --preview 'git show --color=always {} | head -'$LINES
 }
 
-gc() {
+function gc() {
   is_in_git_repo || return
-  git l --color=always |
+  git lg --color=always |
   fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
     --header 'Press CTRL-S to toggle sort' \
     --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
   grep -o "[a-f0-9]\{7,\}"
 }
 
-gr() {
+function gr() {
   is_in_git_repo || return
   git remote -v | awk '{print $1 "\t" $2}' | uniq |
   fzf-down --tac \
@@ -51,19 +51,33 @@ gr() {
   cut -d$'\t' -f1
 }
 
-gbr() {
+function pr() {
+  gh pr list \
+    --author "@me" \
+    --json number,title,headRefName,updatedAt \
+    --template '{{range .}}{{tablerow .number .title .headRefName (timeago .updatedAt)}}{{end}}' | \
+  fzf-down --ansi --height=20 | \
+  awk '{print $1}'
+}
+
+function gbr() {
   is_in_git_repo || return
   git branch -D $(gb)
 }
 
-gbs() {
+function gbs() {
   is_in_git_repo || return
   git checkout $(gb)
 }
 
-gcs() {
+function gcs() {
   is_in_git_repo || return
   git show $(gc)
+}
+
+function prs() {
+  is_in_git_repo || return
+  gh pr checkout $(pr)
 }
 
 bind '"\er": redraw-current-line'
