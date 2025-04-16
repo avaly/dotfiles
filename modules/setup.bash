@@ -17,7 +17,7 @@ export HISTSIZE=-1
 export HISTFILESIZE=-1
 
 # Make some commands not show up in history
-export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g ap:g st:g l:g d:g fix:g fixm:g fixms:g ps:g psf:gpr:exit:date"
+export HISTIGNORE="ls:ll:cd:cd -:..:pwd:g ap:g st:g l:g d:g fix:g fixm:g fixms:g amend:g ps:g psf:gpr:exit:date:yarn:pn i"
 
 #
 # Editor

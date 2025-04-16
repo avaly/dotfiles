@@ -64,7 +64,6 @@
 
 [push]
 	default = simple
-	followTags = true
 
 [log]
 	date = iso
@@ -171,7 +170,7 @@
 	po = !"git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
 	prune = fetch --prune
 	ps = push origin HEAD
-	psf = push -f origin HEAD
+	psf = push --force-with-lease origin HEAD
 	prod = switch production
 	rb = for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ --count=10
 	recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\"
