@@ -1,0 +1,8 @@
+#!/bin/sh
+
+git push origin HEAD
+
+REPO=$(cat .git/config | grep -A 1 "origin" | grep "url = git@github.com:" | sed -E 's/^\s*url = git\@github\.com:(.+)\.git/\1/g')
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+xdg-open "https://github.com/${REPO}/compare/${BRANCH}?expand=1" > /dev/null 2>&1

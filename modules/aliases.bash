@@ -11,6 +11,7 @@ alias gfs="git fuzzy status"
 alias gfb="git fuzzy branch"
 alias gfl="git fuzzy log"
 alias gfd="git fuzzy diff"
+alias gpr="github-open-pr"
 
 alias ga="git-aliases"
 alias gal="git-aliases"
