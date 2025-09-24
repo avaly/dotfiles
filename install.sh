@@ -61,13 +61,12 @@ rm ./delta.deb
 
 # vim
 ln -s -f ~/.dotfiles/.vimrc ~/.vimrc
-mkdir ~/.vim 2> /dev/null
-# vim NERDTree plugin
-cd ~/.vim
-wget https://github.com/scrooloose/nerdtree/archive/4.2.0.tar.gz
-tar xzf 4.2.0.tar.gz
-cp -R nerdtree-4.2.0/* .
-rm -rf nerdtree-4.2.0/
-rm 4.2.0.tar.gz
+mkdir -p ~/.vim
+# https://github.com/joshdick/onedark.vim
+git clone --depth 1 https://github.com/joshdick/onedark.vim.git /tmp/onedark.vim
+mkdir -p ~/.vim/colors
+cp /tmp/onedark.vim/colors/onedark.vim ~/.vim/colors/onedark.vim
+mkdir -p ~/.vim/autoload
+cp /tmp/onedark.vim/autoload/onedark.vim ~/.vim/autoload/onedark.vim
 
 echo "Done!"
