@@ -63,10 +63,6 @@ function dkrm() {
 	docker ps --filter "status=exited" | grep "$1" | awk '{print $1}' | xargs --no-run-if-empty docker rm
 }
 
-function minikube-docker() {
-	eval $(minikube docker-env)
-}
-
 function kbns() {
   kubectl config set-context $(kubectl config current-context) --namespace=$1
 }
@@ -89,7 +85,7 @@ function emojis() {
   printf $(printf '\\U%x\\x20' {{128512..128591},{128640..128725}})
 }
 
-# Output k8s events in chronolical view
+# Output k8s events in chronological view
 function k8s-events {
   {
     echo $'TIME\tTYPE\tREASON\tOBJECT\tSOURCE\tMESSAGE';

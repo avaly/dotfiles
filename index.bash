@@ -20,7 +20,6 @@ function load_modules() {
 	# Terminal session inside X
 	NONLOGIN_MODULES=(
 		'colors.bash'
-		'kubernetes.bash'
 		'prompt.bash'
 		'fzf.bash'
 		'init.bash'
