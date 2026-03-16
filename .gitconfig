@@ -129,6 +129,7 @@
 	br = branch
 	brc = !"git fetch -p; for branch in $(git branch -vv --no-color | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
 	brm = !"git branch --merged | grep -v \"\\*\" | grep -v \"^[^/]\\+$\" | xargs -n 1 git branch -d"
+	brf = !"git fo && git reset --hard origin/$(git branch --show-current)"
 	cl = clone --recursive
 	cm = commit -m
 	cma = commit -a -m
@@ -153,6 +154,7 @@
 	fix2 = commit --fixup HEAD~2
 	fix3 = commit --fixup HEAD~3
 	flog = log --follow -p --
+	fo = fetch origin
 	grp = grep --heading --line-number
 	l = !"git --no-pager lg -n 10"
 	lg = log --graph --pretty=format:'%C(cyan)%h%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
